@@ -24,6 +24,12 @@ class CreateProductTbl extends Migration
             $table->text('product_descriptions');
             $table->string('product_image');
             $table->integer('product_status');
+            $table->integer('product_isHot')->default('0');
+            $table->integer('product_isNew')->default('0');
+            $table->integer('product_inStock')->default('0');
+            $table->foreign('category_id')->references('category_id')->on('Categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('brand_id')->references('brand_id')->on('Brands')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('supplier_id')->references('supplier_id')->on('Suppliers')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
