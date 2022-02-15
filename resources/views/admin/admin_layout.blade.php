@@ -6,19 +6,14 @@
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="shortcut icon" href="favicon.ico"> 
 	<link rel="apple-touch-icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
     <!-- FontAwesome JS-->
     <script defer src="{{asset('plugins/fontawesome/js/all.min.js')}}"></script>
-
-    
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="{{asset('/css/portal.css')}}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head> 
 
@@ -62,7 +57,7 @@
 				    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link" href="{{URL::to('dashboard')}}">
+					        <a class="nav-link" href="{{URL::to('admin/')}}">
 						        <span class="nav-icon"><img src="{{asset('images/icons/icons8-home-64.png')}}" style="width:30px;height:30px" alt="">
 						         </span>
 		                         <span class="nav-link-text">Overview</span>
@@ -83,8 +78,8 @@
 					        </a><!--//nav-link-->
 					        <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
-							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('/product')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> View Category</a></li>
-							        <li class="submenu-item"><a class="submenu-link" href="account.html"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> Create Category</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('admin/view_category')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> View Category</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('admin/create_category')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> Create Category</a></li>
 						        </ul>
 					        </div>
 							
