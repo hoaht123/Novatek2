@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Product extends Model
+{
+    use HasFactory;
+    protected $timestamp = true;
+    protected $fillable = ['product_name','product_price','product_sku','product_description','product_image','product_status','product_isHot','product_isNew','product_inStock'];
+    protected $foreignKey = ['category_id','brand_id','supplier_id'];
+    protected $primaryKey = 'product_id';
+    protected $table = 'Products';
+
+    public function brands(){
+        return $this->belongsTo(App\Models\Brand::class,'brand_id');
+    }
+    public function categories(){
+        return $this->belongsTo(App\Models\Category::class,'category_id');
+    }
+
+    public function suppliers(){
+        return $this->belongsTo(App\Models\Supplier::class,'supplier_id');
+    }
+}
