@@ -22,7 +22,7 @@ class CategoryController extends Controller
         $category->category_name = $data['category_name'];
         $category->category_status = $data['category_status'];
         $category->save();
-        Session::put('message','Thêm danh mục thành công');
+        Session::put('message','Create category successfully');
         return Redirect::to('admin/view_category');
         
     }
@@ -34,13 +34,13 @@ class CategoryController extends Controller
 
     public function active_category($category_id){
         DB::table('Categories')->where('category_id',$category_id)->update(['category_status'=>0]);
-        Session::put('message','Hiển thị danh mục sản phẩm thành công');
+        Session::put('message','Show category successfully');
         return Redirect::to('admin/view_category');
     }
 
     public function unactive_category($category_id){
         DB::table('Categories')->where('category_id',$category_id)->update(['category_status'=>1]);
-        Session::put('message','Ẩn danh mục sản phẩm thành công');
+        Session::put('message','Hide category successfully');
         return Redirect::to('admin/view_category');
     }
 
@@ -52,13 +52,13 @@ class CategoryController extends Controller
     public function saveUpdate_category(Request $request , $category_id){
         $data = $request->all();
         DB::table('Categories')->where('category_id',$category_id)->update(['category_name'=>$data['category_name']]);
-        Session::put('message','Cập nhật mục sản phẩm thành công');
+        Session::put('message','Update category successfully');
         return Redirect::to('admin/view_category');
     }
 
     public function delete_category($category_id){
         DB::table('Categories')->where('category_id',$category_id)->delete();
-        Session::put('message','Xóa mục sản phẩm thành công');
+        Session::put('message','Delete category successfully');
         return Redirect::to('admin/view_category');
     }
 

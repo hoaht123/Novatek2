@@ -78,8 +78,8 @@
 					        </a><!--//nav-link-->
 					        <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
+									<li class="submenu-item"><a class="submenu-link" href="{{URL::to('admin/create_category')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> Create Category</a></li>
 							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('admin/view_category')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> View Category</a></li>
-							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('admin/create_category')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> Create Category</a></li>
 						        </ul>
 					        </div>
 							
@@ -98,8 +98,8 @@
 					        </a><!--//nav-link-->
 					        <div id="submenu-2" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
-							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('/product')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> View Category</a></li>
-							        <li class="submenu-item"><a class="submenu-link" href="account.html"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> Create Category</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('admin/create_brand')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> Create Brand</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('admin/view_brand')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> View Brand</a></li>
 								</ul>
 					        </div>
 							
@@ -118,7 +118,7 @@
 					        </a><!--//nav-link-->
 					        <div id="submenu-3" class="collapse submenu submenu-3" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
-							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('/product')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> View Product</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('admin/create_product')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> Create Products</a></li>
 							        <li class="submenu-item"><a class="submenu-link" href="account.html"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> Create Product</a></li>
 						        </ul>
 					        </div>
