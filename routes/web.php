@@ -46,11 +46,11 @@ Route::prefix('')->group(function(){
     })->name('client.product'); 
     
     Route::get('/products1',function(){
-        return view ('client.product1');
+        return view ('client.products1');
     })->name('client.products1'); 
     
     Route::get('/products2',function(){
-        return view ('client.product2');
+        return view ('client.products2');
     })->name('client.products2'); 
     
     Route::get('/products3',function(){
