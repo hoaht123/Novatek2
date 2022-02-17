@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Supplier;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests;
@@ -19,6 +20,51 @@ class ProductController extends Controller
         $category = Category::all();
         $brand = Brand::all();
         return view('admin.product.create_product',compact('supplier','category','brand'));
+    }
+
+    public function save_product(Request $request){
+        $data = array();
+        $data['product_name'] = $request->product_name;
+        $data['category_id'] = $request->category;
+        $data['brand_id'] = $request->brand;
+        $data['supplier_id'] = $request->supplier;
+        $data['product_price'] = $request->product_price;
+        $data['product_sku'] = $request->product_sku;
+        $data['product_descriptions'] = $request->product_description;
+        $data['product_isHot'] = $request->isHot;
+        $data['product_isNew'] = $request->isNew;
+        $data['product_inStock'] = $request->stock;
+        $data['product_status'] = $request->product_status;
+        
+        $get_image = $request->file('product_image');
+        if($get_image){
+            $get_name_image = $get_image->getClientOriginalName();// lấy tên file
+            $name_image = current(explode('.',$get_name_image));// cắt tên file thành nhiều phần tử, lấy phần tử đầu
+            $extension = explode('.',$get_name_image);
+            $get_extension = end($extension);
+            $extensionChange = strtolower($get_extension);
+            $extensionArray = ['jpg','jpeg','gif','tiff','psb','eps','png'];
+            if(in_array($extensionChange,$extensionArray)){
+                $new_image = $name_image.rand(0,99) . '.' . $get_image->getClientOriginalExtension(); //hàm lấy đuôi file
+                $stored = $get_image->move(public_path().'/images/product', $new_image);
+                $data['product_image'] = $new_image;
+                DB::table('Products')->insert($data);
+                Session::put('message', 'Create product successfully');
+                return Redirect::to('admin/view_product');
+            }else{
+            Session::put('message','File is incorrect . Try again');
+            return Redirect::to('admin/create_product');
+            }
+        }else{
+            Session::put('message', 'Create product failed. Try again');
+            return Redirect::to('admin/add_product');
+        }
+    }
+
+
+    public function view_product(){
+        $product = Product::all();
+        return view('admin.product.view_product',compact('product'));
     }
 
     

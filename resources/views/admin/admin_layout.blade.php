@@ -119,7 +119,7 @@
 					        <div id="submenu-3" class="collapse submenu submenu-3" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
 							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('admin/create_product')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> Create Products</a></li>
-							        <li class="submenu-item"><a class="submenu-link" href="account.html"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> Create Product</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="{{URL::to('admin/view_product')}}"><img src="{{asset('images/icons/icons8-geometric-circle-dot-shape-with-ring-pattern-24.png')}}"  style="width:10px;height:10px" alt=""> View Product</a></li>
 						        </ul>
 					        </div>
 					    </li><!--//nav-item-->			

@@ -1,6 +1,6 @@
 @extends('admin.admin_layout')
 @section('admin-content')
-<h1 class="text-center">Create new category</h1>
+<h2 class="text-center">Create new category</h2>
 <div class="container" style="margin-left: 300px">
     <form action="{{URL::to('admin/save_category')}}" method="post">
         @csrf

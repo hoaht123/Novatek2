@@ -1,6 +1,6 @@
 @extends('admin.admin_layout')
 @section('admin-content')
-<h1 class="text-center">List all categories</h1>
+<h2 class="text-center">List all categories</h1>
 <div class="table-responsive" style="margin-top:50px; text-align:center">
     <table class="table table-striped b-t b-light">
       <thead>

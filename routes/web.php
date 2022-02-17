@@ -29,7 +29,8 @@ Route::prefix('admin')->group(function(){
 
     //Product
     Route::get('/create_product',[App\Http\Controllers\ProductController::class,'create_product']);
-
+    Route::post('/save_product',[App\Http\Controllers\ProductController::class,'save_product']);
+    Route::get('/view_product',[App\Http\Controllers\ProductController::class,'view_product']);
 });
 
 Route::prefix('')->group(function(){

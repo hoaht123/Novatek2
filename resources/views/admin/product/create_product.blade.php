@@ -1,15 +1,24 @@
 @extends('admin.admin_layout')
 @section('admin-content')
-<h1 class="text-center">Create new product</h1>
+<h2 class="text-center">Create new product</h1>
 <div class="container" style="margin-left: 300px">
     <form action="{{URL::to('admin/save_product')}}" method="post" enctype="multipart/form-data">
         @csrf
-        <div class="form-group" style="margin-top:50px">
-        <label>Name</label>
-        <input type="text" name="category_name" class="form-control" style="width:350px">
+        <div class="form-group" style="margin-top:20px">
+        Name
+        <input type="text" name="product_name" class="form-control" style="width:350px">
+        </div>
+        <div class="form-group">
+            Category
+            <select name="category" class="form-control"style="width:200px">
+                <option value="">-----Choose-----</option>
+                @foreach($category as $key=>$cate)
+                <option value="{{$cate->category_id}}"> {{$cate->category_name}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group" >
-            <label for="">Brand</label>
+            Brand
             <select name="brand" class="form-control"style="width:200px">
                 <option value="">-----Choose-----</option>
                 @foreach($brand as $key=>$bra)
@@ -18,16 +27,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="">Category</label>
-            <select name="category" class="form-control"style="width:200px">
-                <option value="">-----Choose-----</option>
-                @foreach($category as $key=>$cate)
-                <option value="{{$cate->category_id}}"> {{$cate->category_name}}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="">Supplier</label>
+            Supplier
             <select name="supplier" class="form-control"style="width:200px">
                 <option value="">-----Choose-----</option>
                 @foreach($supplier as $key=>$sup)
@@ -36,90 +36,45 @@
             </select>
         </div>
         <div class="form-group">
-            <label>Price</label>
+            Price
             <input type="text" name="product_price" class="form-control" style="width:350px">
         </div>
         <div class="form-group" >
-            <label>SKU</label>
+            SKU
             <input type="text" name="product_sku" class="form-control" style="width:350px">
         </div>
-        <label for="">Description</label>
+        Description
         <div class="form-group">
             <textarea   rows="5" cols="60" name="product_description"></textarea>
         </div>
         <div class="form-group">
-            <label for="">Image</label>
+            Image
             <input type="file" name="product_image" class="form-control" style="width:350px">
         </div>
-
-        <div class="form-group" >
-            <label for="">Category staus</label>
-            <select name="category_status" class="form-control"style="width:400px">
-                <option value="0">Show</option>
-                <option value="1">Hide</option>
-            </select>
-        </div>
-        
-        <input style="margin-top:20px" type="submit" value="Create" class="btn btn-info" name="create_cate">
-    </form>
-</div>
-@endsection@extends('admin.admin_layout')
-@section('admin-content')
-<h1 class="text-center">Create new product</h1>
-<div class="container" style="margin-left: 300px">
-    <form action="{{URL::to('admin/save_product')}}" method="post" enctype="multipart/form-data">
-        @csrf
-        <div class="form-group" style="margin-top:50px">
-        <label>Name</label>
-        <input type="text" name="category_name" class="form-control" style="width:350px">
-        </div>
-        <div class="form-group" >
-            <label for="">Brand</label>
-            <select name="brand" class="form-control"style="width:200px">
-                <option value="">-----Choose-----</option>
-                @foreach($brand as $key=>$bra)
-                <option value="{{$bra->brand_id}}"> {{$bra->brand_name}}</option>
-                @endforeach
+        <div class="form-group">
+            Hot
+            <select name="isHot" class="form-control"style="width:200px">
+                <option value="0">Normal</option>
+                <option value="1">Hot</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="">Category</label>
-            <select name="category" class="form-control"style="width:200px">
-                <option value="">-----Choose-----</option>
-                @foreach($category as $key=>$cate)
-                <option value="{{$cate->category_id}}"> {{$cate->category_name}}</option>
-                @endforeach
+            New
+            <select name="isNew" class="form-control"style="width:200px">
+                <option value="0">Old</option>
+                <option value="1">New</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="">Supplier</label>
-            <select name="supplier" class="form-control"style="width:200px">
-                <option value="">-----Choose-----</option>
-                @foreach($supplier as $key=>$sup)
-                <option value="{{$sup->supplier_id}}"> {{$sup->supplier_name}}</option>
-                @endforeach
+            Stock
+            <select name="stock" class="form-control"style="width:200px">
+                <option value="0">In stock</option>
+                <option value="1">Out stock</option>
             </select>
         </div>
-        <div class="form-group">
-            <label>Price</label>
-            <input type="text" name="product_price" class="form-control" style="width:350px">
-        </div>
         <div class="form-group" >
-            <label>SKU</label>
-            <input type="text" name="product_sku" class="form-control" style="width:350px">
-        </div>
-        <label for="">Description</label>
-        <div class="form-group">
-            <textarea   rows="5" cols="60" name="product_description"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="">Image</label>
-            <input type="file" name="product_image" class="form-control" style="width:350px">
-        </div>
-
-        <div class="form-group" >
-            <label for="">Category staus</label>
-            <select name="category_status" class="form-control"style="width:400px">
+            Status
+            <select name="product_status" class="form-control"style="width:400px">
                 <option value="0">Show</option>
                 <option value="1">Hide</option>
             </select>
