@@ -63,9 +63,54 @@ class ProductController extends Controller
 
 
     public function view_product(){
-        $product = Product::all();
-        return view('admin.product.view_product',compact('product'));
+        $product = Product::paginate(10);
+        $category = Category::all();
+        $brand = Brand::all();
+        $supplier = Supplier::all();
+        return view('admin.product.view_product',compact('product','category','brand','supplier'));
     }
+
+    public function view_product_cate($category_id){
+        $product = Product::where('category_id',$category_id)->paginate(10);
+        $category = Category::all();
+        $brand = Brand::all();
+        $supplier = Supplier::all();
+        return view('admin.product.category_product',compact('product','category','brand','supplier'));
+    }
+    public function view_product_brand($brand_id){
+        $product = Product::where('brand_id',$brand_id)->paginate(10);
+        $category = Category::all();
+        $brand = Brand::all();
+        $supplier = Supplier::all();
+        return view('admin.product.category_product',compact('product','category','brand','supplier'));
+    }
+
+    public function view_product_supplier($supplier_id){
+        $product = Product::where('supplier_id',$supplier_id)->paginate(10);
+        $category = Category::all();
+        $brand = Brand::all();
+        $supplier = Supplier::all();
+        return view('admin.product.category_product',compact('product','category','brand','supplier'));
+    }
+
+    public function active_product($product_id){
+        DB::table('Products')->where('product_id',$product_id)->update(['product_status'=>0]);
+        Session::put('message','Show product successfully');
+        return Redirect::to('admin/view_product');
+    }
+
+    public function unactive_product($product_id){
+        DB::table('Products')->where('product_id',$product_id)->update(['product_status'=>1]);
+        Session::put('message','Hide product successfully');
+        return Redirect::to('admin/view_product');
+    }
+
+    public function delete_product($product_id){
+        Product::find($product_id)->delete();
+        Session::put('message','Delete product successfully');
+        return Redirect::to('admin/view_product');
+    }
+
 
     
 }

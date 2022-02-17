@@ -31,6 +31,12 @@ Route::prefix('admin')->group(function(){
     Route::get('/create_product',[App\Http\Controllers\ProductController::class,'create_product']);
     Route::post('/save_product',[App\Http\Controllers\ProductController::class,'save_product']);
     Route::get('/view_product',[App\Http\Controllers\ProductController::class,'view_product']);
+    Route::get('/view_product_cate/{category_id}',[App\Http\Controllers\ProductController::class,'view_product_cate']);
+    Route::get('/view_product_brand/{brand_id}',[App\Http\Controllers\ProductController::class,'view_product_brand']);
+    Route::get('/view_product_sup/{supplier_id}',[App\Http\Controllers\ProductController::class,'view_product_supplier']);
+    Route::get('/view_product/active_product/{product_id}',[App\Http\Controllers\ProductController::class,'active_product']);
+    Route::get('/view_product/unactive_product/{product_id}',[App\Http\Controllers\ProductController::class,'unactive_product']);
+    Route::get('delete_product/{product_id}',[App\Http\Controllers\ProductController::class,'delete_product']);
 });
 
 Route::prefix('')->group(function(){

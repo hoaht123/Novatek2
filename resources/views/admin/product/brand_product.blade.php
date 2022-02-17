@@ -1,45 +1,43 @@
 @extends('admin.admin_layout')
 @section('admin-content')
 <h2 class="text-center">List all products</h1>
-<div class="button" style="display: flex;justify-content: end;">
-    <div class="right" style="display: flex;">
+    <div class="button" style="display: flex;justify-content: end;">
+        <div class="right" style="display: flex;">
+            <div class="dropdown" style="padding-right: 50px;">
+                <button  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Category
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{{URL::to('admin/view_product')}}">All</a>
+                  @foreach($category as $key=>$cate)
+                  <a class="dropdown-item" href="{{URL::to('admin/view_product_cate/'.$cate->category_id)}}">{{$cate->category_name}}</a>
+                  @endforeach   
+                </div>
+        </div>
         <div class="dropdown" style="padding-right: 50px;">
             <button  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Category
+              Brand
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="{{URL::to('admin/view_product')}}">All</a>
-              @foreach($category as $key=>$cate)
-              <a class="dropdown-item" href="{{URL::to('admin/view_product_cate/'.$cate->category_id)}}">{{$cate->category_name}}</a>
+              @foreach($brand as $key=>$bra)
+              <a class="dropdown-item" href="{{URL::to('admin/view_product_brand/'.$bra->brand_id)}}">{{$bra->brand_name}}</a>
               @endforeach   
             </div>
-    </div>
-    <div class="dropdown" style="padding-right: 50px;">
-        <button  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Brand
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="{{URL::to('admin/view_product')}}">All</a>
-          @foreach($brand as $key=>$bra)
-          <a class="dropdown-item" href="{{URL::to('admin/view_product_brand/'.$bra->brand_id)}}">{{$bra->brand_name}}</a>
-          @endforeach   
+        </div>
+        <div class="dropdown" >
+            <button  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Supplier
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="{{URL::to('admin/view_product')}}">All</a>
+              @foreach($supplier as $key=>$sup)
+              <a class="dropdown-item" href="{{URL::to('admin/view_product_cate/'.$sup->supplier_id)}}">{{$sup->supplier_name}}</a>
+              @endforeach   
+            </div>
+        </div>
         </div>
     </div>
-    <div class="dropdown" >
-        <button  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Supplier
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="{{URL::to('admin/view_product')}}">All</a>
-          @foreach($supplier as $key=>$sup)
-          <a class="dropdown-item" href="{{URL::to('admin/view_product_sup/'.$sup->supplier_id)}}">{{$sup->supplier_name}}</a>
-          @endforeach   
-        </div>
-    </div>
-    </div>
-</div>
-
-
 <div class="table-responsive" style="margin-top:50px; text-align:center">
     <table class="table table-striped b-t b-light">
       <thead>
@@ -50,7 +48,6 @@
             <th>Category</th>
             <th>Brand</th>
             <th>Supplier</th>
-            <th>Price</th>
             <th>isHot</th>
             <th>isNew</th>
             <th>Stock</th>
@@ -75,7 +72,6 @@
                 <td>{{$pro->categories->category_name}}</td>
                 <td>{{$pro->brands->brand_name}}</td>
                 <td>{{$pro->suppliers->supplier_name}}</td>
-                <td>{{$pro->product_price}}</td>
                 <td>
                     @if($pro->product_isHot == 0)
                         Normal
