@@ -1,1 +1,0 @@
-# Novatek2
