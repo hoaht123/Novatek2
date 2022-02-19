@@ -372,7 +372,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="contact1.blade.php">contact</a></li>
+                                <li><a href="{{route('client.contact1')}}">contact</a></li>
                             </ul>
                             <div class="navigation-title">
                                 Navigation

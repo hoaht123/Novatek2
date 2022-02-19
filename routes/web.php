@@ -73,17 +73,11 @@ Route::prefix('')->group(function(){
         return view ('client.gallery1');
     })->name('client.gallery1'); 
     
-    Route::get('/gallery2',function(){
-        return view ('client.gallery2');
-    })->name('client.gallery2'); 
     
     Route::get('/checkout1',function(){
         return view ('client.checkout1');
     })->name('client.checkout1'); 
     
-    Route::get('/checkout2',function(){
-        return view ('client.checkout2');
-    })->name('client.checkout2'); 
     
     Route::get('/cart',function(){
         return view ('client.cart');
@@ -92,4 +86,7 @@ Route::prefix('')->group(function(){
     Route::get('/elements',function(){
         return view ('client.elements');
     })->name('client.elements'); 
+    Route::get('/contact1',function(){
+        return view ('client.contact1');
+    })->name('client.contact1'); 
 });
