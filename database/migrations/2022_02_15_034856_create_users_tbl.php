@@ -20,7 +20,6 @@ class CreateUsersTbl extends Migration
             $table->integer('roles');
             $table->string('address');
             $table->string('phone',20);
-            $table->foreign('roles')->references('roles_id')->on('Roles')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,7 +27,7 @@ class CreateUsersTbl extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * @return void 
      */
     public function down()
     {

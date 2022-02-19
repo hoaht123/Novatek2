@@ -17,6 +17,7 @@ class CreateInvoicesTbl extends Migration
             $table->id('invoice_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('shipping_id');
+            $table->string('invoice_code',10);
             $table->integer('quantity');
             $table->string('total');
             $table->foreign('user_id')->references('user_id')->on('Users')->onUpdate('cascade')->onDelete('cascade');

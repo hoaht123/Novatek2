@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpecTbl extends Migration
+class CreateTblMemorySize extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateSpecTbl extends Migration
      */
     public function up()
     {
-        Schema::create('Specs', function (Blueprint $table) {
-            $table->id('spec_id');
-            $table->string('spec_name');
-            $table->string('spec_value');
+        Schema::create('Memory_size', function (Blueprint $table) {
+            $table->id();
+            $table->string('memory_size',50);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateSpecTbl extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Specs');
+        Schema::dropIfExists('Memory_size');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInvoiceDetailsTbl extends Migration
+class CreateTblInvoiceDetails extends Migration
 {
     /**
      * Run the migrations.
@@ -22,8 +22,9 @@ class CreateInvoiceDetailsTbl extends Migration
             $table->integer('quantity');
             $table->string('subtotal');
             $table->foreign('invoice_id')->references('invoice_id')->on('Invoices')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('product_id')->references('product_id')->on('Products')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('product_id')->references('product_id')->on('Product')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+
         });
     }
 
