@@ -80,23 +80,23 @@
                 <th>{{ $pro->product_descriptions}} </th>
                 <td>
                     @if($pro->product_isHot == 0)
-                        Normal
+                        
                     @else
                         Hot
                     @endif
                 </td>
                 <td>
                     @if($pro->product_isNew == 0)
-                        Old
+                        
                     @else
                         New
                     @endif
                 </td>
                 <td>
                     @if($pro->product_inStock == 0)
-                        Instock
+                        In stock
                     @else
-                        Outstock
+                        Out of stock
                     @endif
                 </td>
                 <td><span class="text-ellipsis">

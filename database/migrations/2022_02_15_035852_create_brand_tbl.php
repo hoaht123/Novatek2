@@ -17,6 +17,7 @@ class CreateBrandTbl extends Migration
             $table->id('brand_id');
             $table->string('brand_name',50);
             $table->integer('brand_status');
+            $table->string('brand_slug',50);
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class CreateUsersTbl extends Migration
             $table->id('user_id');
             $table->string('email');
             $table->string('password');
-            $table->unsignedBigInteger('roles');
+            $table->integer('roles');
             $table->string('address');
             $table->string('phone',20);
             $table->foreign('roles')->references('roles_id')->on('Roles')->onUpdate('cascade')->onDelete('cascade');
