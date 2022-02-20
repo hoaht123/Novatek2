@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function getCategory($parent_id){
         $data = Category::all();
         $recursive = new Recursive($data);
-       $htmlOption = $recursive->categoryRecursive($parent_id);
+        $htmlOption = $recursive->categoryRecursive($parent_id);
         return $htmlOption;
     }
 

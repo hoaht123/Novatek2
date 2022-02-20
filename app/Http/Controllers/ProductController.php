@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Supplier;
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests;
@@ -20,124 +21,15 @@ class ProductController extends Controller
         $supplier = Supplier::all();
         $category = Category::all();
         $brand = Brand::all();
-        return view('admin.product.create_product',compact('supplier','category','brand','cpu_speed','core','socket_type'));
+        return view('admin.product.create_product',compact('supplier','category','brand'));
     }
-    //CASE
-    public function create_product_case(){
-        $supplier = Supplier::all();
-        $category = Category::all();
-        $brand = Brand::all();
-        $size_form = DB::table('Size_form')->get();
-        $fan_qty = DB::table('Fan_qty')->get();
-        $color = DB::table('Color')->get();
-        return view('admin.product.form.case_form',compact('supplier','category','brand','size_form','fan_qty','color'));
-    }
-    //RAM
-    public function create_product_ram(){
-        $supplier = Supplier::all();
-        $category = Category::all();
-        $brand = Brand::all();
-        $memory_size = DB::table('Memory_size')->get();
-        $memory_type = DB::table('Memory_type')->get();
-        $bus_speed = DB::table('Bus_speed')->get();
-        return view('admin.product.form.ram_form',compact('supplier','category','brand','memory_size','memory_type','bus_speed'));
-    }
+    
 
-    //Storage
-    public function create_product_storage(){
-        $supplier = Supplier::all();
-        $category = Category::all();
-        $brand = Brand::all();
-        $storage_type = DB::table('Storage_type')->get();
-        $storage_capacity = DB::table('Storage_capacity')->get();
-        $storage_speed = DB::table('Storage_speed')->get();
-        return view('admin.product.form.storage_form',compact('supplier','category','brand','storage_type','storage_capacity','storage_speed'));
-    }
-
-    //Motherboard
-    public function create_product_motherboard(){
-        $supplier = Supplier::all();
-        $category = Category::all();
-        $brand = Brand::all();
-        $size_form = DB::table('Size_form')->get();
-        $memory_type = DB::table('Memory_type')->get();
-        $memory_size = DB::table('Memory_size')->get();
-        return view('admin.product.form.motherboard_form',compact('supplier','category','brand','size_form','socket_type','memory_type','memory_size'));
-    }
-
-    //Graphic card
-    public function create_product_graphic_card(){
-        $supplier = Supplier::all();
-        $category = Category::all();
-        $brand = Brand::all();
-        $cpu = DB::table('Cpu')->get();
-        $video_output = DB::table('Video_output')->get();
-        $memory_type = DB::table('Memory_type')->get();
-        $memory_size = DB::table('Memory_size')->get();
-        return view('admin.product.form.graphics_card_form',compact('supplier','category','brand','cpu','video_output','memory_type','memory_size'));
-    }
-
-    //Power
-    public function create_product_power(){
-        $supplier = Supplier::all();
-        $category = Category::all();
-        $brand = Brand::all();
-        $power = DB::table('Power')->get();
-        $efficiency = DB::table('Efficiency')->get();
-        $fan_size = DB::table('Fan_size')->get();
-        return view('admin.product.form.power_form',compact('supplier','category','brand','power','efficiency','fan_size'));
-    }
-
-    //Keyboard
-    public function create_product_keyboard(){
-        $supplier = Supplier::all();
-        $category = Category::all();
-        $brand = Brand::all();
-        $key_qty = DB::table('Key_qty')->get();
-        $wireless = DB::table('Wireless')->get();
-        $switch = DB::table('Switch')->get();
-        $color = DB::table('Color')->get();
-        return view('admin.product.form.keyboard_form',compact('supplier','category','brand','key_qty','wireless','switch','color'));
-    }
-
-    //MOUSE
-    public function create_product_mouse(){
-        $supplier = Supplier::all();
-        $category = Category::all();
-        $brand = Brand::all();
-        $dpi = DB::table('Dpi')->get();
-        $wireless = DB::table('Wireless')->get();
-        $color = DB::table('Color')->get();
-        return view('admin.product.form.mouse_form',compact('supplier','category','brand','dpi','wireless','color'));
-    }
-
-    //HEADPHONE
-    public function create_product_headphone(){
-        $supplier = Supplier::all();
-        $category = Category::all();
-        $brand = Brand::all();
-        $headphone_type = DB::table('Headphone_type')->get();
-        $wireless = DB::table('Wireless')->get();
-        $micro = DB::table('Micro')->get();
-        $color = DB::table('Color')->get();
-        return view('admin.product.form.headphone_form',compact('supplier','category','brand','headphone_type','wireless','color','micro'));
-    }
-
-    //MONITOR
-    public function create_product_monitor(){
-        $supplier = Supplier::all();
-        $category = Category::all();
-        $brand = Brand::all();
-        $resolution = DB::table('Resolution')->get();
-        $monitor_size = DB::table('Monitor_size')->get();
-        $refresh_rate = DB::table('Refresh_rate')->get();
-        return view('admin.product.form.monitor_form',compact('supplier','category','brand','resolution','monitor_size','refresh_rate'));
-    }
 
     public function save_product(Request $request){
         $data = array();
         $data['product_name'] = $request->product_name;
-        $data['product_slug'] = $request->product_slug;
+        $data['product_slug'] = Str::slug($data['product_name'],'-');
         $data['category_id'] = $request->category;
         $data['brand_id'] = $request->brand;
         $data['supplier_id'] = $request->supplier;
@@ -147,32 +39,6 @@ class ProductController extends Controller
         $data['product_sort_descriptions'] = $request->product_sort_description;
         $data['product_isHot'] = $request->isHot;
         $data['product_isNew'] = $request->isNew;
-        $data['cpu_speed_id'] = $request->cpu_speed;
-        $data['core_id'] = $request->core;
-        $data['socket_id'] = $request->socket_type;
-        $data['size_form_id'] = $request->size_form;
-        $data['fan_qty_id'] = $request->fan;
-        $data['color_id'] = $request->color;
-        $data['memory_size_id'] = $request->memory_size;
-        $data['memory_type_id'] = $request->memory_type;
-        $data['bus_id'] = $request->bus_speed;
-        $data['storage_type_id'] = $request->storage_type;
-        $data['storage_capacity_id'] = $request->storage_capacity;
-        $data['storage_speed_id'] = $request->storage_speed;
-        $data['cpu_id'] = $request->cpu;
-        $data['memory_type_id'] = $request->memory_type;
-        $data['fan_size_id'] = $request->fan_size;
-        $data['power_id'] = $request->power;
-        $data['efficiency_id'] = $request->efficiency;
-        $data['key_qty_id'] = $request->key_qty;
-        $data['wireless_id'] = $request->wireless;
-        $data['switch_id'] = $request->switch;
-        $data['dpi_id'] = $request->dpi;
-        $data['headphone_type_id'] = $request->headphone_type;
-        $data['resolution_id'] = $request->resolution;
-        $data['moniter_size_id'] = $request->monitor_size;
-        $data['refresh_rate_id'] = $request->refresh_rate;
-        $data['micro_id'] = $request->micro;
         $data['product_inStock'] = $request->stock;
         $data['product_status'] = $request->product_status;
         $get_image_gallery = $request->file('product_image_gallery');
