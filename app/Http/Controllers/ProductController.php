@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Components\Recursive;
 use App\Models\Brand;
 use App\Models\Supplier;
 use App\Models\Product;
@@ -16,12 +17,20 @@ session_start();
 
 class ProductController extends Controller
 {
+    public function getCategory($parent_id){
+        $data = Category::all();
+        $recursive = new Recursive($data);
+       $htmlOption = $recursive->categoryRecursive($parent_id);
+        return $htmlOption;
+    }
     //CPU
     public function create_product(){
         $supplier = Supplier::all();
         $category = Category::all();
+        $parent_id='';
+        $htmlOption = $this->getCategory($parent_id);
         $brand = Brand::all();
-        return view('admin.product.create_product',compact('supplier','category','brand'));
+        return view('admin.product.create_product',compact('supplier','category','brand','htmlOption'));
     }
     
 

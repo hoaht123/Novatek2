@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function getCategory($parent_id){
         $data = Category::all();
         $recursive = new Recursive($data);
-        $htmlOption = $recursive->categoryRecursive($parent_id);
+       $htmlOption = $recursive->categoryRecursive($parent_id);
         return $htmlOption;
     }
 
@@ -72,7 +72,7 @@ class CategoryController extends Controller
 
     public function saveUpdate_category(Request $request , $category_id){
         $data = $request->all();
-        DB::table('Categories')->where('category_id',$category_id)->update(['category_name'=>$data['category_name']]);
+        DB::table('Categories')->where('category_id',$category_id)->update(['category_name'=>$data['category_name'],'parent_id' =>$data['parent_id']]);
         Session::put('message','Update category successfully');
         return Redirect::to('admin/view_category');
     }

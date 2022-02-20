@@ -17,9 +17,7 @@
             Category
             <select name="category" class="form-control"style="width:200px">
                 <option value="">-----Choose-----</option>
-                @foreach($category as $key=>$cate)
-                <option value="{{$cate->category_id}}"> {{$cate->category_name}}</option>
-                @endforeach
+                {!! $htmlOption !!}
             </select>
         </div>
         <div class="form-group" >
