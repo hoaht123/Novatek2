@@ -1,6 +1,25 @@
 @extends('admin.admin_layout')
 @section('admin-content')
-<h2 class="text-center">Create new product</h1>
+<div style="margin-top:20px;font-weight:bold">PRODUCT / CREATE / CPU</div>
+<h2 class="text-center">CREATE NEW PRODUCT (CPU)</h1>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Select Form
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="{{URL::to('admin/create_product')}}">CPU</a>
+          <a class="dropdown-item" href="{{URL::to('admin/create_product/case_form')}}">Case</a>
+          <a class="dropdown-item" href="{{URL::to('admin/create_product/ram_form')}}">RAM</a>
+          <a class="dropdown-item" href="{{URL::to('admin/create_product/storage_form')}}">Storage</a>
+          <a class="dropdown-item" href="{{URL::to('admin/create_product/motherboard_form')}}">MotherBoard</a>
+          <a class="dropdown-item" href="{{URL::to('admin/create_product/graphic_card_form')}}">Graphics card</a>
+          <a class="dropdown-item" href="{{URL::to('admin/create_product/power_form')}}">Power (PSU) </a>
+          <a class="dropdown-item" href="{{URL::to('admin/create_product/keyboard_form')}}">Keyboard </a>
+          <a class="dropdown-item" href="{{URL::to('admin/create_product/mouse_form')}}">Mouse</a>
+          <a class="dropdown-item" href="{{URL::to('admin/create_product/headphone_form')}}">Headphone</a>
+          <a class="dropdown-item" href="{{URL::to('admin/create_product/monitor_form')}}">Monitor</a>
+        </div>
+      </div>
 <div class="container" style="margin-left: 300px">
     <form action="{{URL::to('admin/save_product')}}" method="post" enctype="multipart/form-data">
         @csrf
@@ -8,6 +27,10 @@
         Name
         <input type="text" name="product_name" class="form-control" style="width:350px">
         </div>
+        <div class="form-group" style="margin-top:20px">
+            Slug
+            <input type="text" name="product_slug" class="form-control" style="width:350px">
+            </div>
         <div class="form-group">
             Category
             <select name="category" class="form-control"style="width:200px">
@@ -35,6 +58,36 @@
                 @endforeach
             </select>
         </div>
+        <label for="">SPEC</label>
+        <ul>
+            <li> <div class="form-group">
+                Base Clock Speed
+                <select name="cpu_speed" class="form-control"style="width:200px">
+                    <option value="">-----Choose-----</option>
+                    @foreach($cpu_speed as $key=>$sp)
+                    <option value="{{$sp->id}}"> {{$sp->cpu_speed_name}}</option>
+                    @endforeach
+                </select>
+            </div></li>
+            <li> <div class="form-group">
+                Core
+                <select name="core" class="form-control"style="width:200px">
+                    <option value="">-----Choose-----</option>
+                    @foreach($core as $key=>$cr)
+                    <option value="{{$cr->id}}"> {{$cr->core_name}}</option>
+                    @endforeach
+                </select>
+            </div></li>
+            <li> <div class="form-group">
+                Socket Type
+                <select name="socket_type" class="form-control"style="width:200px">
+                    <option value="">-----Choose-----</option>
+                    @foreach($socket_type as $key=>$soc)
+                    <option value="{{$soc->id}}"> {{$soc->socket_name}}</option>
+                    @endforeach
+                </select>
+            </div></li>
+        </ul>
         <div class="form-group">
             Price
             <input type="text" name="product_price" class="form-control" style="width:350px">
@@ -47,9 +100,17 @@
         <div class="form-group">
             <textarea   rows="5" cols="60" name="product_description"></textarea>
         </div>
+        Sort Description
         <div class="form-group">
-            Image
-            <input type="file" name="product_image" class="form-control" style="width:350px">
+            <textarea   rows="5" cols="60" name="product_sort_description"></textarea>
+        </div>
+        <div class="form-group">
+            Main Image
+            <input type="file" name="product_image_main" class="form-control" style="width:350px">
+        </div>
+        <div class="form-group">
+            Gallery Image
+            <input type="file" name="product_image_gallery" class="form-control" style="width:350px">
         </div>
         <div class="form-group">
             Hot

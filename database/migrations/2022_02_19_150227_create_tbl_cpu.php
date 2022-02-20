@@ -15,6 +15,7 @@ class CreateTblCpu extends Migration
     {
         Schema::create('Cpu', function (Blueprint $table) {
             $table->id();
+            $table->string('cpu_name',50);
             $table->timestamps();
         });
     }

@@ -46,7 +46,8 @@
         <tr>
             <th>STT</th>
             <th>Name</th>
-            <th>Image</th>
+            <th>Main</th>
+            <th>Gallary</th>
             <th>Category</th>
             <th>Brand</th>
             <th>Supplier</th>
@@ -72,7 +73,8 @@
             <tr>
                 <td>{{$i++}}</td>
                 <td>{{$pro->product_name}}</td>
-                <td><img src="{{asset('images/product/'.$pro->product_image)}}" alt="{{$pro->product_name}}" style="width:100;height:100px"></td>
+                <td><img src="{{asset('images/product/'.$pro->product_main_image)}}" alt="{{$pro->product_name}}" style="width:100;height:100px"></td>
+                <td><img src="{{asset('images/product/'.$pro->product_image_gallery)}}" alt="{{$pro->product_name}}" style="width:100;height:100px"></td>
                 <td>{{$pro->categories->category_name}}</td>
                 <td>{{$pro->brands->brand_name}}</td>
                 <td>{{$pro->suppliers->supplier_name}}</td>
@@ -119,10 +121,6 @@
     </table>
     
   </div>
-  @foreach($product as $key=>$pro)
-
-    <div><?=str_replace('-', '</br>', $pro->product_descriptions)?></div>
-    @endforeach
     
     {{ $product->links('vendor.custom_pagination') }}
   @endsection

@@ -28,11 +28,25 @@ Route::prefix('admin')->group(function(){
 
 
     //Product
-    Route::get('/create_product',[App\Http\Controllers\ProductController::class,'create_product']);
+    Route::prefix('/create_product')->group(function(){
+        Route::get('/',[App\Http\Controllers\ProductController::class,'create_product']);
+        Route::get('/case_form',[App\Http\Controllers\ProductController::class,'create_product_case']);
+        Route::get('/ram_form',[App\Http\Controllers\ProductController::class,'create_product_ram']);
+        Route::get('/storage_form',[App\Http\Controllers\ProductController::class,'create_product_storage']);
+        Route::get('/motherboard_form',[App\Http\Controllers\ProductController::class,'create_product_motherboard']);
+        Route::get('/graphic_card_form',[App\Http\Controllers\ProductController::class,'create_product_graphic_card']);
+        Route::get('/power_form',[App\Http\Controllers\ProductController::class,'create_product_power']);
+        Route::get('/keyboard_form',[App\Http\Controllers\ProductController::class,'create_product_keyboard']);
+        Route::get('/mouse_form',[App\Http\Controllers\ProductController::class,'create_product_mouse']);
+        Route::get('/headphone_form',[App\Http\Controllers\ProductController::class,'create_product_headphone']);
+        Route::get('/monitor_form',[App\Http\Controllers\ProductController::class,'create_product_monitor']);
+    });
+    
     Route::post('/save_product',[App\Http\Controllers\ProductController::class,'save_product']);
     Route::get('/view_product',[App\Http\Controllers\ProductController::class,'view_product']);
     Route::get('/view_product_cate/{category_id}',[App\Http\Controllers\ProductController::class,'view_product_cate']);
     Route::get('/view_product_brand/{brand_id}',[App\Http\Controllers\ProductController::class,'view_product_brand']);
+    Route::get('/update_product/{product_id}',[App\Http\Controllers\ProductController::class,'update_product']);
     Route::get('/view_product_sup/{supplier_id}',[App\Http\Controllers\ProductController::class,'view_product_supplier']);
     Route::get('/view_product/active_product/{product_id}',[App\Http\Controllers\ProductController::class,'active_product']);
     Route::get('/view_product/unactive_product/{product_id}',[App\Http\Controllers\ProductController::class,'unactive_product']);

@@ -20,6 +20,7 @@ class BrandController extends Controller
         $data = $request->all();
         $brand = new Brand();
         $brand->brand_name = $data['brand_name'];
+        $brand->brand_slug = $data['brand_slug'];
         $brand->brand_status = $data['brand_status'];
         $brand->save();
         Session::put('message','Create brand successfully'); 
