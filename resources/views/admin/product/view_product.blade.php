@@ -46,12 +46,12 @@
         <tr>
             <th>STT</th>
             <th>Name</th>
-            <th>Image</th>
+            <th>Main</th>
+            <th>Gallary</th>
             <th>Category</th>
             <th>Brand</th>
             <th>Supplier</th>
             <th>Price</th>
-            <th>Description</th>
             <th>isHot</th>
             <th>isNew</th>
             <th>Stock</th>
@@ -72,12 +72,12 @@
             <tr>
                 <td>{{$i++}}</td>
                 <td>{{$pro->product_name}}</td>
-                <td><img src="{{asset('images/product/'.$pro->product_image)}}" alt="{{$pro->product_name}}" style="width:100;height:100px"></td>
+                <td><img src="{{asset('images/product/'.$pro->product_main_image)}}" alt="{{$pro->product_name}}" style="width:100;height:100px"></td>
+                <td><img src="{{asset('images/product/'.$pro->product_image_gallery)}}" alt="{{$pro->product_name}}" style="width:100;height:100px"></td>
                 <td>{{$pro->categories->category_name}}</td>
                 <td>{{$pro->brands->brand_name}}</td>
                 <td>{{$pro->suppliers->supplier_name}}</td>
                 <td>{{$pro->product_price}}</td>
-                <th>{{ $pro->product_descriptions}} </th>
                 <td>
                     @if($pro->product_isHot == 0)
                         
@@ -109,7 +109,8 @@
                   <?php  }
                     ?>
                   </span></td>
-                <td>
+                <td >
+                  <a href="{{URL::to('admin/product_details/'.$pro->product_id)}}" class="active" ui-toggle-class="" ><i style="font-size:25px" class="fa-solid fa-eye"></i></a>
                     <a href="{{URL::to('admin/update_product/'.$pro->product_id)}}" class="active" ui-toggle-class="" ><i  style="font-size:25px" class="fa-solid fa-pen-to-square"></i></a>
                     <a href="{{URL::to('admin/delete_product/'.$pro->product_id)}}" class="active" ui-toggle-class="" onclick="return confirm('Do you wanna delete {{$pro->product_name}}')"><i style="font-size:25px')"><i style="font-size:25px" class="fa fa-trash text-danger text"></i></a>
                 </td>
@@ -119,10 +120,6 @@
     </table>
     
   </div>
-  @foreach($product as $key=>$pro)
-
-    <div><?=str_replace('-', '</br>', $pro->product_descriptions)?></div>
-    @endforeach
     
     {{ $product->links('vendor.custom_pagination') }}
   @endsection

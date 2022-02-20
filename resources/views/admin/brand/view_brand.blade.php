@@ -7,6 +7,7 @@
         <tr>
             <th>STT</th>
             <th>Brand name</th>
+            <th>Slug</th>
             <th>Status</th>
             <th>Action</th>
         </tr>
@@ -24,6 +25,7 @@
             <tr>
                 <td>{{$i++}}</td>
                 <td>{{$br->brand_name}}</td>
+                <td>{{$br->brand_slug}}</td>
                 <td><span class="text-ellipsis">
                     <?php
                     if($br->brand_status==0){ ?>

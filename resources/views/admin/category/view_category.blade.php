@@ -7,6 +7,7 @@
         <tr>
             <th>STT</th>
             <th>Category name</th>
+            <th>Slug</th>
             <th>Status</th>
             <th>Action</th>
         </tr>
@@ -24,6 +25,7 @@
             <tr>
                 <td>{{$i++}}</td>
                 <td>{{$cate->category_name}}</td>
+                <td>{{$cate->category_slug}}</td>
                 <td><span class="text-ellipsis">
                     <?php
                     if($cate->category_status==0){ ?>

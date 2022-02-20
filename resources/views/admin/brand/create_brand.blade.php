@@ -9,6 +9,10 @@
         <input type="text" name="brand_name" class="form-control" style="width:650px">
         </div>
         <div class="form-group" style="margin-top:20px">
+            <label>Slug</label>
+            <input type="text" name="brand_slug" class="form-control" style="width:650px">
+            </div>
+        <div class="form-group" style="margin-top:20px">
             <label for="">Status</label>
             <select name="brand_status" class="form-control"style="width:650px">
                 <option value="0"> Show</option>

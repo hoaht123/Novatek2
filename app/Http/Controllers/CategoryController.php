@@ -20,6 +20,7 @@ class CategoryController extends Controller
         $data = $request->all();
         $category = new Category();
         $category->category_name = $data['category_name'];
+        $category->category_slug = $data['category_slug'];
         $category->category_status = $data['category_status'];
         $category->save();
         Session::put('message','Create category successfully');

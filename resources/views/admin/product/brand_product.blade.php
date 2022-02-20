@@ -104,6 +104,7 @@
                     ?>
                   </span></td>
                 <td>
+                  <a href="{{URL::to('admin/product_details/'.$pro->product_id)}}" class="active" ui-toggle-class="" ><i style="font-size:25px" class="fa-solid fa-eye"></i></a>
                     <a href="{{URL::to('admin/update_product/'.$pro->product_id)}}" class="active" ui-toggle-class="" ><i  style="font-size:25px" class="fa-solid fa-pen-to-square"></i></a>
                     <a href="{{URL::to('admin/delete_product/'.$pro->product_id)}}" class="active" ui-toggle-class="" onclick="return confirm('Do you wanna delete {{$pro->product_name}}')"><i style="font-size:25px')"><i style="font-size:25px" class="fa fa-trash text-danger text"></i></a>
                 </td>
