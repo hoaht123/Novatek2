@@ -100,15 +100,15 @@
                     <div class="products-content">
                         <div class="products-wrapper">
                             <div class="row nopadding">
-                                {{-- @foreach($products as $product)
+                                @foreach($products as $product)
                                     <div class="col-sm-4">
                                         <div class="product-shortcode style-1">
                                             <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">{{$product->}}</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">Smartphone vibe x2</a></div>
+                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">{{}}</a></div>
+                                                <div class="h6 animate-to-green"><a href="#">{{$product -> product_name}}</a></div>
                                             </div>
                                             <div class="preview">
-                                                <img src="client/img/product-40.jpg" alt="">
+                                                <img src="{{asset}}" alt="">
                                                 <div class="preview-buttons valign-middle">
                                                     <div class="valign-middle-content">
                                                         <a class="button size-2 style-2" href="#">
@@ -144,7 +144,7 @@
                                             </div>
                                         </div>  
                                     </div>
-                                @endforeach --}}
+                                @endforeach
                             </div>
                         </div>
                     </div>

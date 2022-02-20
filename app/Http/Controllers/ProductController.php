@@ -40,7 +40,13 @@ class ProductController extends Controller
         $data['product_name'] = $request->product_name;
         $data['product_slug'] = Str::slug($data['product_name'],'-');
         $data['category_id'] = $request->category;
-
+        $category = Category::find($data['category_id']);
+        $data['category_spec'] = '';
+        if($category->parent_id == 0){
+            $data['category_spec'] .= $category->category_name;
+        }else{
+            $data['category_spec'] .= $category->category_name.'-'.Category::find($category->parent_id)->category_name;
+        }
         $data['brand_id'] = $request->brand;
         $data['supplier_id'] = $request->supplier;
         $data['product_price'] = $request->product_price;
