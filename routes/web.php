@@ -18,7 +18,7 @@ Route::prefix('admin')->group(function(){
     Route::get('delete_category/{category_id}',[App\Http\Controllers\CategoryController::class,'delete_category']);
 
     //Brand
-    Route::get('/create_brand',[App\Http\Controllers\BrandController::class,'create_brand']);
+    Route::get('/create_brand',[App\Http\Controllers\BrandController::class,'create_brand'])->name('create_brand');
     Route::post('/save_brand',[App\Http\Controllers\BrandController::class,'save_brand']);
     Route::get('/view_brand',[App\Http\Controllers\BrandController::class,'view_brand']);
     Route::get('/update_brand/{brand_id}',[App\Http\Controllers\BrandController::class,'update_brand']);

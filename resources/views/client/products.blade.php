@@ -488,23 +488,19 @@
                     <ul class="categories-menu transparent">
                         @foreach($categories as $category)
                             <li>
-                                <a href="#">{{ $category->name }}</a>
+                                <a href="#">{{ $category->category_name }}</a>
                                 <div class="toggle"></div>
                                 <ul>
-                                    @foreach($categories->categoryChildren as $categoryChild)                          
+                                    @foreach($category->categoryChildren as $categoryChild)                          
                                     <li>
-                                        <a href="#">{{ $categoryChild->name }}</a>
+                                        <a href="#">{{ $categoryChild->category_name }}</a>
                                         <div class="toggle"></div>
                                         <ul>
+                                            @foreach($categoryChild->categoryChildren as $categoryGrandChild)
                                             <li>
-                                                <a href="#">laptops &amp; computers</a>
+                                                <a href="#">{{ $categoryGrandChild->category_name }}</a>
                                             </li>
-                                            <li>
-                                                <a href="#">video &amp; photo cameras</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">smartphones</a>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     @endforeach
@@ -522,25 +518,13 @@
                     <div class="empty-space col-xs-b25 col-sm-b50"></div>
 
                     <div class="h4 col-xs-b25">Brands</div>
+                    @foreach($brands as $brand)
                     <label class="checkbox-entry">
-                        <input type="checkbox"><span>LG</span>
-                    </label>
-                    <div class="empty-space col-xs-b10"></div>
-                    <label class="checkbox-entry">
-                        <input type="checkbox"><span>SAMSUNG</span>
-                    </label>
-                    <div class="empty-space col-xs-b10"></div>
-                    <label class="checkbox-entry">
-                        <input type="checkbox"><span>Apple</span>
-                    </label>
-                    <div class="empty-space col-xs-b10"></div>
-                    <label class="checkbox-entry">
-                        <input type="checkbox"><span>HTC</span>
-                    </label>
-                    <div class="empty-space col-xs-b10"></div>
-                    <label class="checkbox-entry">
-                        <input type="checkbox"><span>Google</span>
-                    </label>
+                        <input type="checkbox"><span>{{ $brand->brand_name}}</span>
+                        </label>
+                        <div class="empty-space col-xs-b10"></div>
+                    @endforeach
+
 
                     <div class="empty-space col-xs-b25 col-sm-b50"></div>
 

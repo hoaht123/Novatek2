@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Brand;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 session_start(); 
@@ -20,7 +21,7 @@ class BrandController extends Controller
         $data = $request->all();
         $brand = new Brand();
         $brand->brand_name = $data['brand_name'];
-        $brand->brand_slug = $data['brand_slug'];
+        $brand->brand_slug =Str::slug($data['brand_name'], '-');
         $brand->brand_status = $data['brand_status'];
         $brand->save();
         Session::put('message','Create brand successfully'); 

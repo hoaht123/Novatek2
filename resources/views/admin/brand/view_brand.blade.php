@@ -2,12 +2,13 @@
 @section('admin-content')
 <h2 class="text-center">List all brand</h2>
 <div class="table-responsive" style="margin-top:50px; text-align:center">
+  <p class="float-right"><a href="{{route('create_brand')}}" class="btn btn-primary">Add Brand</a></p>
     <table class="table table-striped b-t b-light">
       <thead>
         <tr>
             <th>STT</th>
             <th>Brand name</th>
-            <th>Slug</th>
+            <th>slug</th>
             <th>Status</th>
             <th>Action</th>
         </tr>

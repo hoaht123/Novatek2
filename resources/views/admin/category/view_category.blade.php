@@ -8,7 +8,7 @@
         <tr>
             <th>STT</th>
             <th>Category name</th>
-            <th>Slug</th>
+            <th>Parent_id</th>
             <th>Status</th>
             <th>Action</th>
         </tr>
@@ -26,7 +26,7 @@
             <tr>
                 <td>{{$i++}}</td>
                 <td>{{$cate->category_name}}</td>
-                <td>{{$cate->category_slug}}</td>
+                <td>{{$cate->parent_id}}</td>
                 <td><span class="text-ellipsis">
                     <?php
                     if($cate->category_status==0){ ?>
