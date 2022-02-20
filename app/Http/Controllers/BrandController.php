@@ -27,7 +27,7 @@ class BrandController extends Controller
         Session::put('message','Create brand successfully'); 
         return Redirect::to('admin/view_brand');
     }
-
+    
     public function view_brand(){
         $brand = Brand::all();
         return view('admin.brand.view_brand',compact('brand'));
