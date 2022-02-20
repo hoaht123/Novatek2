@@ -52,7 +52,6 @@
             <th>Brand</th>
             <th>Supplier</th>
             <th>Price</th>
-            <th>Description</th>
             <th>isHot</th>
             <th>isNew</th>
             <th>Stock</th>
@@ -79,7 +78,6 @@
                 <td>{{$pro->brands->brand_name}}</td>
                 <td>{{$pro->suppliers->supplier_name}}</td>
                 <td>{{$pro->product_price}}</td>
-                <th>{{ $pro->product_descriptions}} </th>
                 <td>
                     @if($pro->product_isHot == 0)
                         
