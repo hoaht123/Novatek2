@@ -11,4 +11,8 @@ class Category extends Model
     protected $fillable = ['category_name','category_status'];
     protected $primaryKey = 'category_id';
     protected $table = 'Categories';
+
+    public function categoryChildren(){
+        return $this->hasMany(Category::class,'parent_id');
+    }
 }

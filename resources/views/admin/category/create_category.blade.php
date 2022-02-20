@@ -8,10 +8,13 @@
         <label>Name</label>
         <input type="text" name="category_name" class="form-control" style="width:650px">
         </div>
-        <div class="form-group" style="margin-top:20px">
-            <label>Slug</label>
-            <input type="text" name="category_slug" class="form-control" style="width:650px">
-            </div>
+        <div class="form-group" style="margin-top:50px">
+            <label>Chọn danh mục cha</label>
+            <select class="form-control" name="parent_id" style="width:650px">
+              <option value="0">Chọn danh mục cha</option>
+              {!! $htmlOption !!}
+            </select>
+        </div>
         <div class="form-group" style="margin-top:20px">
             <label for="">Status</label>
             <select name="category_status" class="form-control"style="width:650px">

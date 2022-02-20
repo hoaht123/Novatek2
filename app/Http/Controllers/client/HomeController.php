@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,8 @@ class HomeController extends Controller
     }
     public function products()
     {
-        return view('client.products');
+        $categories = Category::where('parent_id',0)->get();
+        return view('client.products', compact('categories'));
     }
     public function product_detail()
     {

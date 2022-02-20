@@ -2,6 +2,7 @@
 @section('admin-content')
 <h2 class="text-center">List all categories</h1>
 <div class="table-responsive" style="margin-top:50px; text-align:center">
+  <p class="float-right"><a href="{{route('create_category')}}" class="btn btn-primary">Add Category</a></p>
     <table class="table table-striped b-t b-light">
       <thead>
         <tr>

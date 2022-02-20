@@ -7,9 +7,6 @@ use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Supplier;
 use App\Models\Product;
-use App\Models\Cpu_speed;
-use App\Models\Core;
-use App\Models\Socket_type;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests;
@@ -23,9 +20,6 @@ class ProductController extends Controller
         $supplier = Supplier::all();
         $category = Category::all();
         $brand = Brand::all();
-        $cpu_speed = Cpu_speed::all();
-        $core = Core::all();
-        $socket_type = Socket_type::all();
         return view('admin.product.create_product',compact('supplier','category','brand','cpu_speed','core','socket_type'));
     }
     //CASE
@@ -66,7 +60,6 @@ class ProductController extends Controller
         $category = Category::all();
         $brand = Brand::all();
         $size_form = DB::table('Size_form')->get();
-        $socket_type = Socket_type::all();
         $memory_type = DB::table('Memory_type')->get();
         $memory_size = DB::table('Memory_size')->get();
         return view('admin.product.form.motherboard_form',compact('supplier','category','brand','size_form','socket_type','memory_type','memory_size'));

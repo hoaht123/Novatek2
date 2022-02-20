@@ -6,21 +6,33 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use App\Components\Recursive;
+use Illuminate\Support\Str;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 session_start(); 
 
 class CategoryController extends Controller
 {
+    public function getCategory($parent_id){
+        $data = Category::all();
+        $recursive = new Recursive($data);
+       $htmlOption = $recursive->categoryRecursive($parent_id);
+        return $htmlOption;
+    }
+
     public function create_category(){
-        return view('admin.category.create_category');
+        $parent_id='';
+        $htmlOption = $this->getCategory($parent_id);
+        return view('admin.category.create_category', compact('htmlOption'));
     }
 
     public function save_category(Request $request){
         $data = $request->all();
         $category = new Category();
         $category->category_name = $data['category_name'];
-        $category->category_slug = $data['category_slug'];
+        $category->parent_id = $data['parent_id'];
+        $category->category_slug =Str::slug($data['category_name'], '-');
         $category->category_status = $data['category_status'];
         $category->save();
         Session::put('message','Create category successfully');

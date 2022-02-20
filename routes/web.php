@@ -8,7 +8,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/',[App\Http\Controllers\AdminController::class,'index']);
     Route::get('/login',[App\Http\Controllers\AdminController::class,'login']);
     //Category
-    Route::get('/create_category',[App\Http\Controllers\CategoryController::class,'create_category']);
+    Route::get('/create_category',[App\Http\Controllers\CategoryController::class,'create_category'])->name('create_category');
     Route::post('/save_category',[App\Http\Controllers\CategoryController::class,'save_category']);
     Route::get('/view_category',[App\Http\Controllers\CategoryController::class,'view_category']);
     Route::get('/view_category/active_category/{category_id}',[App\Http\Controllers\CategoryController::class,'active_category']);
