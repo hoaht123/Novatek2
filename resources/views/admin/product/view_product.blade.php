@@ -48,7 +48,7 @@
             <th>Name</th>
             <th>Main</th>
             <th>Gallary</th>
-            <th>Category</th>
+            <th>Category spec</th>
             <th>Brand</th>
             <th>Supplier</th>
             <th>Price</th>
@@ -74,7 +74,7 @@
                 <td>{{$pro->product_name}}</td>
                 <td><img src="{{asset('images/product/'.$pro->product_main_image)}}" alt="{{$pro->product_name}}" style="width:100;height:100px"></td>
                 <td><img src="{{asset('images/product/'.$pro->product_image_gallery)}}" alt="{{$pro->product_name}}" style="width:100;height:100px"></td>
-                <td>{{$pro->categories->category_name}}</td>
+                <td>{{$pro->categories->category_spec}}</td>
                 <td>{{$pro->brands->brand_name}}</td>
                 <td>{{$pro->suppliers->supplier_name}}</td>
                 <td>{{$pro->product_price}}</td>

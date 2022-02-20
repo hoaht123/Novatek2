@@ -9,10 +9,7 @@
         Name
         <input type="text" name="product_name" class="form-control" style="width:350px">
         </div>
-        <div class="form-group" style="margin-top:20px">
-            Slug
-            <input type="text" name="product_slug" class="form-control" style="width:350px">
-            </div>
+        
         <div class="form-group">
             Category
             <select name="category" class="form-control"style="width:200px">
