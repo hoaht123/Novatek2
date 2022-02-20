@@ -20,7 +20,7 @@
                             </div>
                             <div class="entry hidden-xs hidden-sm"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></div>
                             <div class="entry hidden-xs hidden-sm cart">
-                                <a href="cart.html">
+                                <a href="{{ route('client.cart')}}">
                                     <b class="hidden-xs">Your bag</b>
                                     <span class="cart-icon">
                                         <i class="fa fa-shopping-bag" aria-hidden="true"></i>
@@ -108,7 +108,7 @@
                                             </div>
                                         </div>
                                         <div class="col-xs-6 text-right">
-                                            <a class="button size-2 style-3" href="checkout1.html">
+                                            <a class="button size-2 style-3" href="{{ route('client.checkout')}}">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="client/img/icon-4.png" alt=""></span>
                                                     <span class="text">proceed to checkout</span>
@@ -152,10 +152,7 @@
                                             <div class="menu-toggle"></div>
                                             <div class="megamenu">
                                                 <div class="links">
-                                                    <a class="active" href="checkout1.html">Checkout 1</a>
-                                                    <a href="checkout2.html">Checkout 2</a>
-                                                    <a href="cart.html">Cart</a>
-                                                    <a href="elements.html">Elements</a>
+                                                    <a class="active" href="{{ route('client.checkout')}}">Checkout</a>
                                                 </div>
                                                 <div class="content">
                                                     <div class="row nopadding">
