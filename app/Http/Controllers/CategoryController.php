@@ -57,9 +57,17 @@ class CategoryController extends Controller
         return Redirect::to('admin/view_category');
     }
 
+    public function edit($id)
+    {
+        $category = Category::find($id);
+        $htmlOption = $this->getCategory($category->parent_id);
+        return view('admin.categories.edit', compact('category', 'htmlOption'));
+    }
+
     public function update_category($category_id){
-        $category = DB::table('Categories')->where('category_id',$category_id)->first();
-        return view('admin.category.update_category',compact('category'));
+        $category = Category::find($category_id);
+        $htmlOption = $this->getCategory($category->parent_id);
+        return view('admin.category.update_category',compact('category','htmlOption'));
     }
 
     public function saveUpdate_category(Request $request , $category_id){
