@@ -44,6 +44,7 @@ Route::prefix('admin')->group(function(){
     
     Route::post('/save_product',[App\Http\Controllers\ProductController::class,'save_product']);
     Route::get('/view_product',[App\Http\Controllers\ProductController::class,'view_product']);
+    Route::get('/product_details/{product_id}',[App\Http\Controllers\ProductController::class,'product_details']);
     Route::get('/view_product_cate/{category_id}',[App\Http\Controllers\ProductController::class,'view_product_cate']);
     Route::get('/view_product_brand/{brand_id}',[App\Http\Controllers\ProductController::class,'view_product_brand']);
     Route::get('/update_product/{product_id}',[App\Http\Controllers\ProductController::class,'update_product']);

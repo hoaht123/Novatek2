@@ -141,11 +141,6 @@ class ProductController extends Controller
         return view('admin.product.form.monitor_form',compact('supplier','category','brand','resolution','monitor_size','refresh_rate'));
     }
 
-
-
-
-
-    
     public function save_product(Request $request){
         $data = array();
         $data['product_name'] = $request->product_name;
@@ -168,6 +163,9 @@ class ProductController extends Controller
         $data['memory_size_id'] = $request->memory_size;
         $data['memory_type_id'] = $request->memory_type;
         $data['bus_id'] = $request->bus_speed;
+        $data['storage_type_id'] = $request->storage_type;
+        $data['storage_capacity_id'] = $request->storage_capacity;
+        $data['storage_speed_id'] = $request->storage_speed;
         $data['cpu_id'] = $request->cpu;
         $data['memory_type_id'] = $request->memory_type;
         $data['fan_size_id'] = $request->fan_size;
@@ -176,7 +174,11 @@ class ProductController extends Controller
         $data['key_qty_id'] = $request->key_qty;
         $data['wireless_id'] = $request->wireless;
         $data['switch_id'] = $request->switch;
+        $data['dpi_id'] = $request->dpi;
         $data['headphone_type_id'] = $request->headphone_type;
+        $data['resolution_id'] = $request->resolution;
+        $data['moniter_size_id'] = $request->monitor_size;
+        $data['refresh_rate_id'] = $request->refresh_rate;
         $data['micro_id'] = $request->micro;
         $data['product_inStock'] = $request->stock;
         $data['product_status'] = $request->product_status;
@@ -272,6 +274,11 @@ class ProductController extends Controller
         return Redirect::to('admin/view_product');
     }
 
+
+    public function product_details($product_id){
+        $product = Product::where('product_id',$product_id)->get();
+        return view('admin.product.product_details',compact('product'));
+    }
 
 
     

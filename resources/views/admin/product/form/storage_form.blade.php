@@ -71,7 +71,7 @@
             </div></li>
             <li> <div class="form-group">
                 Storage capacity
-                <select name="memory_type" class="form-control"style="width:200px">
+                <select name="storage_capacity" class="form-control"style="width:200px">
                     <option value="">-----Choose-----</option>
                     @foreach($storage_capacity as $key=>$st_capa)
                     <option value="{{$st_capa->id}}"> {{$st_capa->storage_capacity}}</option>

@@ -1,7 +1,7 @@
 @extends('admin.admin_layout')
 @section('admin-content')
-<div style="margin-top:20px;font-weight:bold">PRODUCT / CREATE / KEYBOARD</div>
-<h2 class="text-center">CREATE NEW PRODUCT (KEYBOARD)</h1>
+<div style="margin-top:20px;font-weight:bold">PRODUCT / CREATE / MOUSE</div>
+<h2 class="text-center">CREATE NEW PRODUCT (MOUSE)</h1>
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Select Form
