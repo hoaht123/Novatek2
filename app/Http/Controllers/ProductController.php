@@ -109,7 +109,10 @@ class ProductController extends Controller
     }
 
     public function view_product_cate($category_id){
-        $product = Product::where('category_id',$category_id)->paginate(10);
+        $product = DB::table('Product')
+            ->join('Categories','Product.category_id','=','Categories.category_id')
+            ->where('Categories.parent_id', '=', $category_id)
+             ->paginate(10);
         $category = Category::all();
         $brand = Brand::all();
         $supplier = Supplier::all();
