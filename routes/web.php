@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\client\HomeController;
 
 
 Route::prefix('admin')->group(function(){
@@ -40,53 +41,11 @@ Route::prefix('admin')->group(function(){
 });
 
 Route::prefix('')->group(function(){
-    Route::get('/',function(){
-        return view ('client.index1');
-    })->name('client.index1'); 
-    
-    Route::get('/about1',function(){
-        return view ('client.about1');
-    })->name('client.about1'); 
-    
-    Route::get('/product',function(){
-        return view ('client.product');
-    })->name('client.product'); 
-    
-    Route::get('/products1',function(){
-        return view ('client.products1');
-    })->name('client.products1'); 
-    
-    Route::get('/products2',function(){
-        return view ('client.products2');
-    })->name('client.products2'); 
-    
-    Route::get('/products3',function(){
-        return view ('client.products3');
-    })->name('client.products3'); 
-    
-    Route::get('/services1',function(){
-        return view ('client.services1');
-    })->name('client.services1'); 
-    
-    
-    Route::get('/gallery1',function(){
-        return view ('client.gallery1');
-    })->name('client.gallery1'); 
-    
-    
-    Route::get('/checkout1',function(){
-        return view ('client.checkout1');
-    })->name('client.checkout1'); 
-    
-    
-    Route::get('/cart',function(){
-        return view ('client.cart');
-    })->name('client.cart'); 
-    
-    Route::get('/elements',function(){
-        return view ('client.elements');
-    })->name('client.elements'); 
-    Route::get('/contact1',function(){
-        return view ('client.contact1');
-    })->name('client.contact1'); 
+    Route::get('',[HomeController::class,'index'])->name('client.home'); 
+    Route::get('/products',[HomeController::class,'products'])->name('client.products'); 
+    Route::get('/product/{product_slug}',[HomeController::class,'product_detail'])->name('client.product_detail');
+    Route::get('/cart',[HomeController::class,'cart'])->name('client.cart');
+    Route::get('/checkout',[HomeController::class,'checkout'])->name('client.checkout');
+    Route::get('/contact',[HomeController::class,'contact'])->name('client.contact');
+    Route::get('/about',[HomeController::class,'about'])->name('client.about');
 });
