@@ -21,7 +21,7 @@
                     <div class="col-sm-6 text-right">
                         <a class="button size-2 style-3" href="#">
                             <span class="button-wrapper">
-                                <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
+                                <span class="icon"><img src="{{ asset('client/img/icon-4.png')}}" alt="" /></span>
                                 <span class="text">submit</span>
                             </span>
                         </a>  
@@ -34,7 +34,7 @@
                     <div class="col-sm-6 col-xs-b10 col-sm-b0">
                         <a class="button facebook-button size-2 style-4 block" href="{{URL::to('login-facebook')}}">
                             <span class="button-wrapper">
-                                <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
+                                <span class="icon"><img src="{{ asset('client/img/icon-4.png')}}" alt="" /></span>
                                 <span class="text">facebook</span>
                             </span>
                         </a>
@@ -43,7 +43,7 @@
                     <div class="col-sm-6">
                         <a class="button google-button size-2 style-4 block" href="{{URL::to('login-google')}}">
                             <span class="button-wrapper">
-                                <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
+                                <span class="icon"><img src="{{ asset('client/img/icon-4.png')}}" alt="" /></span>
                                 <span class="text">google+</span>
                             </span>
                         </a>
@@ -78,7 +78,7 @@
                     <div class="col-sm-5 text-right">
                         <a class="button size-2 style-3" href="#">
                             <span class="button-wrapper">
-                                <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
+                                <span class="icon"><img src="{{ asset('client/img/icon-4.png')}}" alt="" /></span>
                                 <span class="text">submit</span>
                             </span>
                         </a>  
@@ -91,7 +91,7 @@
                     <div class="col-sm-6 col-xs-b10 col-sm-b0">
                         <a class="button facebook-button size-2 style-4 block" href="{{URL::to('login-facebook')}}">
                             <span class="button-wrapper">
-                                <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
+                                <span class="icon"><img src="{{ asset('client/img/icon-4.png')}}" alt="" /></span>
                                 <span class="text">facebook</span>
                             </span>
                         </a>
@@ -100,7 +100,7 @@
                     <div class="col-sm-6">
                         <a class="button google-button size-2 style-4 block" href="{{URL::to('login-google')}}">
                             <span class="button-wrapper">
-                                <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
+                                <span class="icon"><img src="{{ asset('client/img/icon-4.png')}}" alt="" /></span>
                                 <span class="text">google+</span>
                             </span>
                         </a>
@@ -125,31 +125,31 @@
                                <div class="swiper-wrapper">
                                    <div class="swiper-slide">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="product-big-preview-entry swiper-lazy" data-background="client/img/product-preview-4.jpg"></div>
+                                        <div class="product-big-preview-entry swiper-lazy" data-background="{{ asset('client/img/product-preview-4.jpg')}}"></div>
                                    </div>
                                    <div class="swiper-slide">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="product-big-preview-entry swiper-lazy" data-background="client/img/product-preview-5.jpg"></div>
+                                        <div class="product-big-preview-entry swiper-lazy" data-background="{{ asset('client/img/product-preview-5.jpg')}}"></div>
                                    </div>
                                    <div class="swiper-slide">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="product-big-preview-entry swiper-lazy" data-background="client/img/product-preview-6.jpg"></div>
+                                        <div class="product-big-preview-entry swiper-lazy" data-background="{{ asset('client/img/product-preview-6.jpg')}}"></div>
                                    </div>
                                    <div class="swiper-slide">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="product-big-preview-entry swiper-lazy" data-background="client/img/product-preview-7.jpg"></div>
+                                        <div class="product-big-preview-entry swiper-lazy" data-background="{{ asset('client/img/product-preview-7.jpg')}}"></div>
                                    </div>
                                    <div class="swiper-slide">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="product-big-preview-entry swiper-lazy" data-background="client/img/product-preview-8.jpg"></div>
+                                        <div class="product-big-preview-entry swiper-lazy" data-background="{{ asset('client/img/product-preview-8.jpg')}}"></div>
                                    </div>
                                    <div class="swiper-slide">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="product-big-preview-entry swiper-lazy" data-background="client/img/product-preview-9.jpg"></div>
+                                        <div class="product-big-preview-entry swiper-lazy" data-background="{{ asset('client/img/product-preview-9.jpg')}}"></div>
                                    </div>
                                    <div class="swiper-slide">
                                         <div class="swiper-lazy-preloader"></div>
-                                        <div class="product-big-preview-entry swiper-lazy" data-background="client/img/product-preview-10.jpg"></div>
+                                        <div class="product-big-preview-entry swiper-lazy" data-background="{{ asset('client/img/product-preview-10.jpg')}}"></div>
                                    </div>
                                </div>
                             </div>
@@ -162,37 +162,37 @@
                                <div class="swiper-wrapper">
                                    <div class="swiper-slide">
                                         <div class="product-small-preview-entry">
-                                            <img src="client/img/product-preview-4_.jpg" alt="" />
+                                            <img src="{{ asset('client/img/product-preview-4_.jpg')}}" alt="" />
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="product-small-preview-entry">
-                                            <img src="client/img/product-preview-5_.jpg" alt="" />
+                                            <img src="{{ asset('client/img/product-preview-5_.jpg')}}" alt="" />
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="product-small-preview-entry">
-                                            <img src="client/img/product-preview-6_.jpg" alt="" />
+                                            <img src="{{ asset('client/img/product-preview-6_.jpg')}}" alt="" />
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="product-small-preview-entry">
-                                            <img src="client/img/product-preview-7_.jpg" alt="" />
+                                            <img src="{{ asset('client/img/product-preview-7_.jpg')}}" alt="" />
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="product-small-preview-entry">
-                                            <img src="client/img/product-preview-8_.jpg" alt="" />
+                                            <img src="{{ asset('client/img/product-preview-8_.jpg')}}" alt="" />
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="product-small-preview-entry">
-                                            <img src="client/img/product-preview-9_.jpg" alt="" />
+                                            <img src="{{ asset('client/img/product-preview-9_.jpg')}}" alt="" />
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="product-small-preview-entry">
-                                            <img src="client/img/product-preview-10_.jpg" alt="" />
+                                            <img src="{{ asset('client/img/product-preview-10_.jpg')}}" alt="" />
                                         </div>
                                    </div>
 
@@ -275,7 +275,7 @@
                             <div class="col-sm-6 col-xs-b10 col-sm-b0">
                                 <a class="button size-2 style-2 block" href="#">
                                     <span class="button-wrapper">
-                                        <span class="icon"><img src="client/img/icon-2.png" alt=""></span>
+                                        <span class="icon"><img src="{{ asset('client/img/icon-2.png')}}" alt=""></span>
                                         <span class="text">add to cart</span>
                                     </span>
                                 </a>

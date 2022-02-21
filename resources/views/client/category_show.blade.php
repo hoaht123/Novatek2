@@ -104,8 +104,8 @@
                                     <div class="col-sm-4">
                                         <div class="product-shortcode style-1">
                                             <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="{{ route('client.product_detail',['product_id' => $product->product_id])}}">{{$product ->product_name}}</a></div>
-                                                <div class="h6 animate-to-green"><a href="{{ route('client.product_detail',['product_id' => $product->product_id])}}">{{$product ->product_name}}</a></div>
+                                                <div class="simple-article size-1 color col-xs-b5"><a href="{{ route('client.product_detail',['product_id' => $product->product_id])}}">{{$product -> product_name}}</a></div>
+                                                <div class="h6 animate-to-green"><a href="{{ route('client.product_detail',['product_id' => $product->product_id])}}">{{$product -> product_name}}</a></div>
                                             </div>
                                             <div class="preview">
                                                 <img src="{{asset('images/product/'.$product->product_main_image)}}" alt="">
@@ -140,6 +140,7 @@
                                         </div>  
                                     </div>
                                 @endforeach
+                                
                             </div>
                         </div>
                     </div>

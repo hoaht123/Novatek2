@@ -82,5 +82,23 @@ class CategoryController extends Controller
         Session::put('message','Delete category successfully');
         return Redirect::to('admin/view_category');
     }
+    public function search(Request $request){
+        $keyword = $request->keyword;
+        $category = Category::where('category_name','like','%'.$keyword.'%')->get();
+        return view('admin.category.view_category',compact('category'));
+    }
+    public function category_clicked($category_id){
+        $category = Category::find($category_id);
+        $category_children = Category::where('parent_id',$category_id)->get();
+        if($category_id != 0){
+            $category_parent = Category::where('category_id',$category->parent_id)->first();
+            if($category_parent->parent_id != 0){
+                $category_parent_parent = Category::where('category_id',$category_parent->parent_id)->first();
+                return view('client.category_show',compact('category','category_children','category_parent','category_parent_parent'));
+            }
+            return view('client.category_show',compact('category','category_children','category_parent'));
+        }
+        return view('client.category_show',compact('category','category_children'));
+    }
 
 }

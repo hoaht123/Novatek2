@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $brands = Brand::all();
         $categories = Category::where('parent_id',0)->get();
-        $products = Product::paginate(10);
+        $products = Product::where('product_status',0)->paginate(10);
         return view('client.products', compact('categories','brands','products'));
     }
     public function product_detail($product_id)

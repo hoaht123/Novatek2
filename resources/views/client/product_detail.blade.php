@@ -1,6 +1,6 @@
 @extends('client.layouts.master')
 @section('title')
-    {{-- <title>{{$product->product_name}} Detail</title> --}}
+    <title>Detail</title>
 @endsection
 @section('content')
         <div class="header-empty-space"></div>
@@ -36,57 +36,57 @@
 
                                 <div class="empty-space col-xs-b30 col-sm-b60"></div>
 
-                                <div class="swiper-container swiper-control-bottom" data-breakpoints="1" data-xs-slides="3" data-sm-slides="3" data-md-slides="4" data-lt-slides="4" data-slides-per-view="5" data-center="1" data-click="1">
+                                {{-- <div class="swiper-container swiper-control-bottom" data-breakpoints="1" data-xs-slides="3" data-sm-slides="3" data-md-slides="4" data-lt-slides="4" data-slides-per-view="5" data-center="1" data-click="1">
                                    <div class="swiper-button-prev hidden"></div>
                                    <div class="swiper-button-next hidden"></div>
                                    <div class="swiper-wrapper">
                                        <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="client/img/product-preview-4_.jpg" alt="" />
+                                                <img src="{{ asset('client/img/product-preview-4_.jpg')}}" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="client/img/product-preview-5_.jpg" alt="" />
+                                                <img src="{{ asset('client/img/product-preview-5_.jpg')}}" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="client/img/product-preview-6_.jpg" alt="" />
+                                                <img src="{{ asset('client/img/product-preview-6_.jpg')}}" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="client/img/product-preview-7_.jpg" alt="" />
+                                                <img src="{{ asset('client/img/product-preview-7_.jpg')}}" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="client/img/product-preview-8_.jpg" alt="" />
+                                                <img src="{{ asset('client/img/product-preview-8_.jpg')}}" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="client/img/product-preview-9_.jpg" alt="" />
+                                                <img src="{{ asset('client/img/product-preview-9_.jpg')}}" alt="" />
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="product-small-preview-entry">
-                                                <img src="client/img/product-preview-10_.jpg" alt="" />
+                                                <img src="{{ asset('client/img/product-preview-10_.jpg')}}" alt="" />
                                             </div>
                                        </div>
 
                                    </div>
-                                </div>
+                                </div> --}}
                             </div>
 
                         </div>
                         <div class="col-sm-6">
-                            <div class="simple-article size-3 grey col-xs-b5">{{$product-> product_spec}}</div>
-                            <div class="h3 col-xs-b25">{{$product-> product_name}}</div>
+                            <div class="simple-article size-3 grey col-xs-b5">{{$product->product_spec}}</div>
+                            <div class="h3 col-xs-b25">{{$product->product_name}}</div>
                             <div class="row col-xs-b25">
                                 <div class="col-sm-6">
-                                    <div class="simple-article size-5 grey">PRICE: <span class="color">${{$product->price}}</span></div>        
+                                    <div class="simple-article size-5 grey">PRICE: <span class="color">${{$product->product_price}}</span></div>        
                                 </div>
                                 <div class="col-sm-6 col-sm-text-right">
                                     <div class="rate-wrapper align-inline">
@@ -104,10 +104,10 @@
                                     <div class="simple-article size-3 col-xs-b5">ITEM NO.: <span class="grey">{{$product->product_id}}</span></div>
                                 </div>
                                 <div class="col-sm-6 col-sm-text-right">
-                                    <div class="simple-article size-3 col-xs-b20">AVAILABLE.: <span class="grey">{{$product->inStock==0?"out of stock":$product->inStock}}</span></div>
+                                    <div class="simple-article size-3 col-xs-b20">AVAILABLE.: <span class="grey">{{$product->product_inStock==0?"out of stock":"in stock"}}</span></div>
                                 </div>
                             </div>
-                            <div class="simple-article size-3 col-xs-b30">Vivamus in tempor eros. Phasellus rhoncus in nunc sit amet mattis. Integer in ipsum vestibulum, molestie arcu ac, efficitur tellus. Phasellus id vulputate erat.</div>
+                            <div class="simple-article size-3 col-xs-b30">{!!$product->product_descriptions!!}</div>
                             <div class="row col-xs-b40">
                                 <div class="col-sm-3">
                                     <div class="h6 detail-data-title size-1">size:</div>
@@ -115,12 +115,7 @@
                             </div>
                             <div class="row col-xs-b40">
                                 <div class="col-sm-3">
-                                    <div class="h6 detail-data-title">color:</div>
-                                </div>
-                            </div>
-                            <div class="row col-xs-b40">
-                                <div class="col-sm-3">
-                                    <div class="h6 detail-data-title size-1">quantity:</div>
+                                    <div class="h6 detail-data-title size-1">{{$product->inStock}}</div>
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="quantity-select">
@@ -134,7 +129,7 @@
                                 <div class="col-sm-6 col-xs-b10 col-sm-b0">
                                     <a class="button size-2 style-2 block" href="#">
                                         <span class="button-wrapper">
-                                            <span class="icon"><img src="client/img/icon-2.png" alt=""></span>
+                                            <span class="icon"><img src="{{ asset('client/img/icon-2.png')}}"alt=""></span>
                                             <span class="text">add to cart</span>
                                         </span>
                                     </a>
@@ -180,58 +175,7 @@
 
                         <div class="tab-entry visible">
                             <div class="row">
-                                <div class="col-sm-6 col-xs-b30 col-sm-b0">
-                                    <div class="simple-article">
-                                        <img class="rounded-image" src="client/img/thumbnail-15.jpg" alt="" />
-                                    </div>
-                                    <div class="empty-space col-xs-b25"></div>
-                                    <div class="h5">Nullam et massa nulla</div>
-                                    <div class="empty-space col-xs-b20"></div>
-                                    <div class="simple-article size-2">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet.</div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="simple-article">
-                                        <img class="rounded-image" src="client/img/thumbnail-16.jpg" alt="" />
-                                    </div>
-                                    <div class="empty-space col-xs-b25"></div>
-                                    <div class="h5">Vivamus ut posuere nunc</div>
-                                    <div class="empty-space col-xs-b20"></div>
-                                    <div class="simple-article size-2">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet.</div>
-                                </div>
-                            </div>
-
-                            <div class="empty-space col-xs-b35 col-md-b70"></div>
-
-                            <div class="left-right-entry clearfix align-right">
-                                <div class="preview-wrapper">
-                                    <img class="preview" src="client/img/thumbnail-17.jpg" alt="" />
-                                </div>
-                                <div class="description">
-                                    <div class="h5">Aenean a tincidunt felis</div>
-                                    <div class="empty-space col-xs-b15"></div>
-                                    <div class="simple-article size-2">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur vulputate elit.</div>
-                                    <div class="empty-space col-xs-b30 col-sm-b45"></div>
-                                    <div class="h5">Nulla sed arcu ipsum</div>
-                                    <div class="empty-space col-xs-b15"></div>
-                                    <div class="simple-article size-2">Nullam et massa nulla. Quisque nec magna ornare tellus consequat lacinia a quis sem. Vivamus ut posuere nunc. Praesent porttitor vitae augue in semper. Vestibulum non leo et nisi facilisis consequat. Ut volutpat augue faucibus, fermentum turpis convallis, lobortis augue.</div>
-                                </div>
-                            </div>
-
-                            <div class="empty-space col-xs-b35 col-md-b70"></div>
-
-                            <div class="left-right-entry clearfix">
-                                <div class="preview-wrapper">
-                                    <img class="preview" src="client/img/thumbnail-18.jpg" alt="" />
-                                </div>
-                                <div class="description">
-                                    <div class="h5">Aenean a tincidunt felis</div>
-                                    <div class="empty-space col-xs-b15"></div>
-                                    <div class="simple-article size-2">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur vulputate elit.</div>
-                                    <div class="empty-space col-xs-b30 col-sm-b45"></div>
-                                    <div class="h5">Nulla sed arcu ipsum</div>
-                                    <div class="empty-space col-xs-b15"></div>
-                                    <div class="simple-article size-2">Nullam et massa nulla. Quisque nec magna ornare tellus consequat lacinia a quis sem. Vivamus ut posuere nunc. Praesent porttitor vitae augue in semper. Vestibulum non leo et nisi facilisis consequat. Ut volutpat augue faucibus, fermentum turpis convallis, lobortis augue.</div>
-                                </div>
+                                    {!!$product->product_descriptions!!}
                             </div>
                         </div>
 
@@ -294,13 +238,13 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="simple-article size-2 text-center">
-                                        <img src="client/img/thumbnail-19.jpg" alt="" />
+                                        <img src="{{ asset('client/img/thumbnail-19.jpg')}}" alt="" />
                                         <p><br/>Stainless Steel</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="simple-article size-2 text-center">
-                                        <img src="client/img/thumbnail-20.jpg" alt="" />
+                                        <img src="{{ asset('client/img/thumbnail-20.jpg')}}" alt="" />
                                         <p><br/>Space Black Stainless Steel</p>
                                     </div>
                                 </div>
@@ -364,13 +308,13 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="simple-article size-2 text-center">
-                                        <img src="client/img/thumbnail-21.jpg" alt="" />
+                                        <img src="{{ asset('client/img/thumbnail-21.jpg')}}" alt="" />
                                         <p><br/>Stainless Steel</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="simple-article size-2 text-center">
-                                        <img src="client/img/thumbnail-22.jpg" alt="" />
+                                        <img src="{{ asset('client/img/thumbnail-22.jpg')}}" alt="" />
                                         <p><br/>Space Black Stainless Steel</p>
                                     </div>
                                 </div>
@@ -381,7 +325,7 @@
                             <div class="testimonial-entry">
                                 <div class="row col-xs-b20">
                                     <div class="col-xs-8">
-                                        <img class="preview" src="client/img/testimonial-1.jpg" alt="" />
+                                        <img class="preview" src="{{ asset('client/img/testimonial-1.jpg')}}" alt="" />
                                         <div class="heading-description">
                                             <div class="h6 col-xs-b5">Dorian gray</div>
                                             <div class="rate-wrapper align-inline">
@@ -408,7 +352,7 @@
                             <div class="testimonial-entry">
                                 <div class="row col-xs-b20">
                                     <div class="col-xs-8">
-                                        <img class="preview" src="client/img/testimonial-2.jpg" alt="" />
+                                        <img class="preview" src="{{ asset('client/img/testimonial-2.jpg')}}" alt="" />
                                         <div class="heading-description">
                                             <div class="h6 col-xs-b5">alan doe</div>
                                             <div class="rate-wrapper align-inline">
@@ -435,7 +379,7 @@
                             <div class="testimonial-entry">
                                 <div class="row col-xs-b20">
                                     <div class="col-xs-8">
-                                        <img class="preview" src="client/img/testimonial-3.jpg" alt="" />
+                                        <img class="preview" src="{{ asset('client/img/testimonial-3.jpg')}}" alt="" />
                                         <div class="heading-description">
                                             <div class="h6 col-xs-b5">samantha rae</div>
                                             <div class="rate-wrapper align-inline">
@@ -500,7 +444,7 @@
                                     <div class="col-xs-6 text-right">
                                         <div class="button size-2 style-3">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-4.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-4.png')}}"alt=""></span>
                                                 <span class="text">submit</span>
                                             </span>
                                             <input type="submit" value="">
@@ -516,7 +460,7 @@
                     <div class="empty-space col-md-b70"></div>
 
                 </div>
-    @include('client.components.product_sidebar')
+                @include('client.components.product_sidebar')
             </div>
 
             {{-- <div class="swiper-container arrows-align-top" data-breakpoints="1" data-xs-slides="1" data-sm-slides="3" data-md-slides="4" data-lt-slides="4" data-slides-per-view="5">
@@ -532,18 +476,18 @@
                                 <div class="h6 animate-to-green"><a href="#">usb watch charger</a></div>
                             </div>
                             <div class="preview">
-                                <img src="client/img/product-49.jpg" alt="">
+                                <img src="{{ asset('client/img/product-49.jpg')}}"alt="">
                                 <div class="preview-buttons valign-middle">
                                     <div class="valign-middle-content">
                                         <a class="button size-2 style-2" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-1.png')}}"alt=""></span>
                                                 <span class="text">Learn More</span>
                                             </span>
                                         </a>
                                         <a class="button size-2 style-3" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-3.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-3.png')}}"alt=""></span>
                                                 <span class="text">Add To Cart</span>
                                             </span>
                                         </a>
@@ -562,18 +506,18 @@
                                 <div class="h6 animate-to-green"><a href="#">usb watch charger</a></div>
                             </div>
                             <div class="preview">
-                                <img src="client/img/product-50.jpg" alt="">
+                                <img src="{{ asset('client/img/product-50.jpg')}}"alt="">
                                 <div class="preview-buttons valign-middle">
                                     <div class="valign-middle-content">
                                         <a class="button size-2 style-2" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-1.png')}}"alt=""></span>
                                                 <span class="text">Learn More</span>
                                             </span>
                                         </a>
                                         <a class="button size-2 style-3" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-3.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-3.png')}}"alt=""></span>
                                                 <span class="text">Add To Cart</span>
                                             </span>
                                         </a>
@@ -592,18 +536,18 @@
                                 <div class="h6 animate-to-green"><a href="#">usb watch charger</a></div>
                             </div>
                             <div class="preview">
-                                <img src="client/img/product-51.jpg" alt="">
+                                <img src="{{ asset('client/img/product-51.jpg')}}"alt="">
                                 <div class="preview-buttons valign-middle">
                                     <div class="valign-middle-content">
                                         <a class="button size-2 style-2" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-1.png')}}"alt=""></span>
                                                 <span class="text">Learn More</span>
                                             </span>
                                         </a>
                                         <a class="button size-2 style-3" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-3.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-3.png')}}"alt=""></span>
                                                 <span class="text">Add To Cart</span>
                                             </span>
                                         </a>
@@ -622,18 +566,18 @@
                                 <div class="h6 animate-to-green"><a href="#">usb watch charger</a></div>
                             </div>
                             <div class="preview">
-                                <img src="client/img/product-52.jpg" alt="">
+                                <img src="{{ asset('client/img/product-52.jpg')}}"alt="">
                                 <div class="preview-buttons valign-middle">
                                     <div class="valign-middle-content">
                                         <a class="button size-2 style-2" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-1.png')}}"alt=""></span>
                                                 <span class="text">Learn More</span>
                                             </span>
                                         </a>
                                         <a class="button size-2 style-3" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-3.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-3.png')}}"alt=""></span>
                                                 <span class="text">Add To Cart</span>
                                             </span>
                                         </a>
@@ -652,18 +596,18 @@
                                 <div class="h6 animate-to-green"><a href="#">usb watch charger</a></div>
                             </div>
                             <div class="preview">
-                                <img src="client/img/product-53.jpg" alt="">
+                                <img src="{{ asset('client/img/product-53.jpg')}}"alt="">
                                 <div class="preview-buttons valign-middle">
                                     <div class="valign-middle-content">
                                         <a class="button size-2 style-2" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-1.png')}}"alt=""></span>
                                                 <span class="text">Learn More</span>
                                             </span>
                                         </a>
                                         <a class="button size-2 style-3" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-3.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-3.png')}}"alt=""></span>
                                                 <span class="text">Add To Cart</span>
                                             </span>
                                         </a>
@@ -682,18 +626,18 @@
                                 <div class="h6 animate-to-green"><a href="#">usb watch charger</a></div>
                             </div>
                             <div class="preview">
-                                <img src="client/img/product-54.jpg" alt="">
+                                <img src="{{ asset('client/img/product-54.jpg')}}"alt="">
                                 <div class="preview-buttons valign-middle">
                                     <div class="valign-middle-content">
                                         <a class="button size-2 style-2" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-1.png')}}"alt=""></span>
                                                 <span class="text">Learn More</span>
                                             </span>
                                         </a>
                                         <a class="button size-2 style-3" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-3.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-3.png')}}"alt=""></span>
                                                 <span class="text">Add To Cart</span>
                                             </span>
                                         </a>
@@ -712,18 +656,18 @@
                                 <div class="h6 animate-to-green"><a href="#">usb watch charger</a></div>
                             </div>
                             <div class="preview">
-                                <img src="client/img/product-55.jpg" alt="">
+                                <img src="{{ asset('client/img/product-55.jpg')}}"alt="">
                                 <div class="preview-buttons valign-middle">
                                     <div class="valign-middle-content">
                                         <a class="button size-2 style-2" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-1.png')}}"alt=""></span>
                                                 <span class="text">Learn More</span>
                                             </span>
                                         </a>
                                         <a class="button size-2 style-3" href="#">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="client/img/icon-3.png" alt=""></span>
+                                                <span class="icon"><img src="{{ asset('client/img/icon-3.png')}}"alt=""></span>
                                                 <span class="text">Add To Cart</span>
                                             </span>
                                         </a>
@@ -746,7 +690,7 @@
                 <div class="col-sm-6 col-md-3 col-xs-b25">
                     <div class="h4 col-xs-b25">Hot Sale</div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-28.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-28.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">WIRELESS</div>
                             <h6 class="h6 col-xs-b10"><a href="#">wireless headphones</a></h6>
@@ -755,7 +699,7 @@
                     </div>
                     <div class="col-xs-b10"></div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-29.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-29.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">CASES</div>
                             <h6 class="h6 col-xs-b10"><a href="#">earphones case</a></h6>
@@ -764,7 +708,7 @@
                     </div>
                     <div class="col-xs-b10"></div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-30.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-30.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">CASES</div>
                             <h6 class="h6 col-xs-b10"><a href="#">headphones case</a></h6>
@@ -775,7 +719,7 @@
                 <div class="col-sm-6 col-md-3 col-xs-b25">
                     <div class="h4 col-xs-b25">Top Rated</div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-31.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-31.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">WIRELESS</div>
                             <h6 class="h6 col-xs-b10"><a href="#">wireless headphones</a></h6>
@@ -784,7 +728,7 @@
                     </div>
                     <div class="col-xs-b10"></div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-32.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-32.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">CASES</div>
                             <h6 class="h6 col-xs-b10"><a href="#">earphones case</a></h6>
@@ -793,7 +737,7 @@
                     </div>
                     <div class="col-xs-b10"></div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-33.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-33.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">CASES</div>
                             <h6 class="h6 col-xs-b10"><a href="#">headphones case</a></h6>
@@ -804,7 +748,7 @@
                 <div class="col-sm-6 col-md-3 col-xs-b25">
                     <div class="h4 col-xs-b25">Popular</div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-34.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-34.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">WIRELESS</div>
                             <h6 class="h6 col-xs-b10"><a href="#">wireless headphones</a></h6>
@@ -813,7 +757,7 @@
                     </div>
                     <div class="col-xs-b10"></div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-35.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-35.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">CASES</div>
                             <h6 class="h6 col-xs-b10"><a href="#">earphones case</a></h6>
@@ -822,7 +766,7 @@
                     </div>
                     <div class="col-xs-b10"></div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-36.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-36.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">CASES</div>
                             <h6 class="h6 col-xs-b10"><a href="#">headphones case</a></h6>
@@ -833,7 +777,7 @@
                 <div class="col-sm-6 col-md-3 col-xs-b25">
                     <div class="h4 col-xs-b25">Best Choice</div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-37.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-37.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">WIRELESS</div>
                             <h6 class="h6 col-xs-b10"><a href="#">wireless headphones</a></h6>
@@ -842,7 +786,7 @@
                     </div>
                     <div class="col-xs-b10"></div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-38.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-38.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">CASES</div>
                             <h6 class="h6 col-xs-b10"><a href="#">earphones case</a></h6>
@@ -851,7 +795,7 @@
                     </div>
                     <div class="col-xs-b10"></div>
                     <div class="product-shortcode style-4 rounded clearfix">
-                        <a class="preview" href="#"><img src="client/img/product-39.jpg" alt="" /></a>
+                        <a class="preview" href="#"><img src="{{ asset('client/img/product-39.jpg')}}"alt="" /></a>
                         <div class="description">
                             <div class="simple-article color size-1 col-xs-b5">CASES</div>
                             <h6 class="h6 col-xs-b10"><a href="#">headphones case</a></h6>
@@ -886,7 +830,7 @@
                             <input class="simple-input light" type="text" value="" placeholder="Your email">
                             <div class="button size-2 style-1">
                                 <span class="button-wrapper">
-                                    <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
+                                    <span class="icon"><img src="{{ asset('client/img/icon-1.png')}}"alt=""></span>
                                     <span class="text">submit</span>
                                 </span>
                                 <input type="submit" value="">
@@ -898,8 +842,8 @@
         </div>
 @section('js')
     <!-- range slider -->
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="{{ asset('js/jquery-ui.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.ui.touch-punch.min.js')}}"></script>
     <script>
         $(document).ready(function(){
             var minVal = parseInt($('.min-price').text());

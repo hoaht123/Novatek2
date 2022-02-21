@@ -42,7 +42,7 @@
                                 <div class="cart-toggle hidden-xs hidden-sm">
                                     <div class="cart-overflow">
                                         <div class="cart-entry clearfix">
-                                            <a class="cart-entry-thumbnail" href="#"><img src="client/img/product-1.png" alt="" /></a>
+                                            <a class="cart-entry-thumbnail" href="#"><img src="{{ asset('client/img/product-1.png')}}" alt="" /></a>
                                             <div class="cart-entry-description">
                                                 <table>
                                                     <tr>
@@ -65,7 +65,7 @@
                                             </div>
                                         </div>
                                         <div class="cart-entry clearfix">
-                                            <a class="cart-entry-thumbnail" href="#"><img src="client/img/product-2.png" alt="" /></a>
+                                            <a class="cart-entry-thumbnail" href="#"><img src="{{ asset('client/img/product-2.png')}}" alt="" /></a>
                                             <div class="cart-entry-description">
                                                 <table>
                                                     <tr>
@@ -88,7 +88,7 @@
                                             </div>
                                         </div>
                                         <div class="cart-entry clearfix">
-                                            <a class="cart-entry-thumbnail" href="#"><img src="client/img/product-3.png" alt="" /></a>
+                                            <a class="cart-entry-thumbnail" href="#"><img src="{{ asset('client/img/product-3.png')}}" alt="" /></a>
                                             <div class="cart-entry-description">
                                                 <table>
                                                     <tr>
@@ -121,7 +121,7 @@
                                         <div class="col-xs-6 text-right">
                                             <a class="button size-2 style-3" href="{{ route('client.checkout')}}">
                                                 <span class="button-wrapper">
-                                                    <span class="icon"><img src="client/img/icon-4.png" alt=""></span>
+                                                    <span class="icon"><img src="{{ asset('client/img/icon-4.png')}}"alt=""></span>
                                                     <span class="text">proceed to checkout</span>
                                                 </span>
                                             </a>
@@ -142,7 +142,7 @@
                 <div class="content-margins">
                     <div class="row">
                         <div class="col-xs-3 col-sm-1">
-                            <a id="logo" href="index1.html"><img src="client/img/logo-2.png" alt="" /></a>  
+                            <a id="logo" href="index1.html"><img src="{{ asset('client/img/logo-2.png')}}"alt="" /></a>  
                         </div>
                         <div class="col-xs-9 col-sm-11 text-right">
                             <div class="nav-wrapper">
@@ -181,10 +181,10 @@
                                                                         <div class="swiper-button-next style-1"></div>
                                                                         <div class="swiper-wrapper">
                                                                             <div class="swiper-slide">
-                                                                                <img src="client/img/product-61.jpg" alt="" />
+                                                                                <img src="{{ asset('client/img/product-61.jpg')}}" alt="" />
                                                                             </div>
                                                                             <div class="swiper-slide">
-                                                                                <img src="client/img/product-59.jpg" alt="" />
+                                                                                <img src="{{ asset('client/img/product-59.jpg')}}" alt="" />
                                                                             </div>
                                                                         </div>
                                                                     </div> 
@@ -213,13 +213,13 @@
                                                                     <div class="buttons-wrapper">
                                                                         <a class="button size-2 style-2" href="product.html">
                                                                             <span class="button-wrapper">
-                                                                                <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
+                                                                                <span class="icon"><img src="{{ asset('client/img/icon-1.png')}}"alt=""></span>
                                                                                 <span class="text">Learn More</span>
                                                                             </span>
                                                                         </a>
                                                                         <a class="button size-2 style-3" href="#">
                                                                             <span class="button-wrapper">
-                                                                                <span class="icon"><img src="client/img/icon-3.png" alt=""></span>
+                                                                                <span class="icon"><img src="{{ asset('client/img/icon-3.png')}}"alt=""></span>
                                                                                 <span class="text">Add To Cart</span>
                                                                             </span>
                                                                         </a>
@@ -228,7 +228,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
-                                                            <div class="banner-shortcode style-3 rounded-image text-center" style="background-image: url(client/img/background-11.jpg);">
+                                                            <div class="banner-shortcode style-3 rounded-image text-center" style="background-image: url({{ asset('client/img/background-11')}}.jpg);">
                                                                 <div class="valign-middle-cell">
                                                                     <div class="valign-middle-content">
                                                                         <div class="simple-article size-5 light transparent uppercase col-xs-b5"><span class="color">30%</span>DISCOUNT</div>
@@ -236,7 +236,7 @@
                                                                         <div class="simple-article size-3 light transparent col-xs-b30">Vivamus in tempor eros. Phasellus rhoncus in nunc sit amet mattis. Integer in ipsum vestibulum, molestie arcu ac</div>
                                                                         <a class="button size-2 style-1" href="#">
                                                                             <span class="button-wrapper">
-                                                                                <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
+                                                                                <span class="icon"><img src="{{ asset('client/img/icon-1.png')}}"alt=""></span>
                                                                                 <span class="text">learn more</span>
                                                                             </span>
                                                                         </a>
