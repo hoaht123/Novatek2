@@ -9,33 +9,44 @@
         <div class="header-empty-space"></div>
 
         <div class="content-margins grey">
-            {{-- <div class="slider-wrapper">
+            <div class="slider-wrapper">
                 <div class="swiper-button-prev visible-lg"></div>
                 <div class="swiper-button-next visible-lg"></div>
                 <div class="swiper-container" data-parallax="1" data-auto-height="1">
                    <div class="swiper-wrapper">
-                       <div class="swiper-slide" style="background-image: url(client/img/background-1.jpg);">
+                       <div class="swiper-slide" style="background-image: url(client/img/background-4.jpg);">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="cell-view page-height">
-                                            <div class="col-xs-b40 col-sm-b80"></div>
+                                    <div class="col-sm-6 col-sm-offset-6">
+                                        <div class="cell-view simple-banner-height">
+                                            <div class="col-xs-b35 col-sm-b70"></div>
                                             <div data-swiper-parallax-x="-600">
-                                                <div class="simple-article light transparent size-3">PROFESSIONAL EDITION</div>
+                                                <div class="simple-article light transparent size-3">MODERN COLLECTION</div>
                                                 <div class="col-xs-b5"></div>
                                             </div>
                                             <div data-swiper-parallax-x="-500">
-                                                <h1 class="h1 light">real beat trx</h1>
+                                                <h2 class="h2 light">headphones mdx</h2>
                                                 <div class="title-underline light left"><span></span></div>
                                             </div>
                                             <div data-swiper-parallax-x="-400">
                                                 <div class="simple-article size-4 light transparent">
-                                                    <p>In feugiat molestie tortor a malesuada. Etiam a venenatis ipsum. Proin pharetra elit at feugiat commodo vel placerat tincidunt sapien nec</p>
-                                                    <ul>
-                                                        <li>20.000h of high quality music</li>
-                                                        <li>Perfect insulation</li>
-                                                        <li>5 years guaranteed work</li>
-                                                    </ul>
+                                                    <p>Praesent nec finibus massa. Phasellus id auctor lacus, at iaculis lorem. Donec quis arcu elit. In vehicula purus sem, eu mattis est lacinia.</p>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <ul>
+                                                                <li>20.000h of high quality music</li>
+                                                                <li>perfect insulation</li>
+                                                                <li>5 years guaranteed work</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <ul>
+                                                                <li>consectetur adipiscing elit</li>
+                                                                <li>porta tortor sit amet</li>
+                                                                <li>feugiat augue placerat</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="col-xs-b30"></div>
                                             </div>
@@ -56,64 +67,26 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-b40 col-sm-b80"></div>
+                                            <div class="col-xs-b35 col-sm-b70"></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="slider-product-preview" data-swiper-parallax-x="-600">
-                                    <img src="client/img/product-preview-12.png" alt="" />
-                                </div>
-                                <div class="empty-space col-xs-b80 col-sm-b0"></div>
-                            </div>
-                       </div>
-                       <div class="swiper-slide" style="background-image: url(client/img/background-2.jpg);">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-sm-6 col-sm-offset-6 col-sm-text-right">
-                                        <div class="cell-view page-height">
-                                            <div class="col-xs-b40 col-sm-b80"></div>
-                                            <div data-swiper-parallax-x="-600">
-                                                <div class="simple-article light transparent size-3">PROFESSIONAL EDITION</div>
-                                                <div class="col-xs-b5"></div>
+                                <div class="slider-product-preview align-left">
+                                    <div class="product-preview-shortcode light">
+                                        <div class="preview">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="entry full-size swiper-lazy active" data-background="client/img/product-preview-14.png"></div>
+                                            <div class="entry full-size swiper-lazy" data-background="client/img/product-preview-13.png"></div>
+                                            <div class="entry full-size swiper-lazy" data-background="client/img/product-preview-12.png"></div>
+                                        </div>
+                                        <div class="sidebar valign-middle" data-swiper-parallax-x="-300">
+                                            <div class="valign-middle-content">
+                                                <div class="entry active"><img src="client/img/product-71.png" alt="" /></div>
+                                                <div class="entry"><img src="client/img/product-72.png" alt="" /></div>
+                                                <div class="entry"><img src="client/img/product-73.png" alt="" /></div>
                                             </div>
-                                            <div data-swiper-parallax-x="-500">
-                                                <h1 class="h1 light">real beat trx</h1>
-                                                <div class="title-underline light left"><span></span></div>
-                                            </div>
-                                            <div data-swiper-parallax-x="-400">
-                                                <div class="simple-article size-4 light transparent">
-                                                    <p>In feugiat molestie tortor a malesuada. Etiam a venenatis ipsum. Proin pharetra elit at feugiat commodo vel placerat tincidunt sapien nec</p>
-                                                    <ul>
-                                                        <li>20.000h of high quality music</li>
-                                                        <li>Perfect insulation</li>
-                                                        <li>5 years guaranteed work</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-xs-b30"></div>
-                                            </div>
-                                            <div data-swiper-parallax-x="-300">
-                                                <div class="buttons-wrapper">
-                                                    <div class="simple-article size-5 light transparent">BEST PRICE: $195.00</div>
-                                                    <a class="button size-2 style-1" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
-                                                            <span class="text">Learn More</span>
-                                                        </span>
-                                                    </a>
-                                                    <a class="button size-2 style-2" href="#">
-                                                        <span class="button-wrapper">
-                                                            <span class="icon"><img src="client/img/icon-2.png" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-b40 col-sm-b80"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="slider-product-preview align-left" data-swiper-parallax-x="-600">
-                                    <img src="client/img/product-preview-13.png" alt="" />
                                 </div>
                                 <div class="empty-space col-xs-b80 col-sm-b0"></div>
                             </div>
@@ -121,39 +94,74 @@
                        <div class="swiper-slide" style="background-image: url(client/img/background-3.jpg);">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-2 col-sm-text-center">
-                                        <div class="cell-view page-height">
-                                            <div class="col-xs-b40 col-sm-b80"></div>
+                                    <div class="col-sm-6">
+                                        <div class="cell-view simple-banner-height">
+                                            <div class="col-xs-b35 col-sm-b70"></div>
                                             <div data-swiper-parallax-x="-600">
-                                                <div class="simple-article light transparent size-3">PROFESSIONAL EDITION</div>
+                                                <div class="simple-article light transparent size-3">MODERN COLLECTION</div>
                                                 <div class="col-xs-b5"></div>
                                             </div>
                                             <div data-swiper-parallax-x="-500">
-                                                <h1 class="h1 light">real beat trx</h1>
+                                                <h2 class="h2 light">headphones mdx</h2>
                                                 <div class="title-underline light left"><span></span></div>
                                             </div>
                                             <div data-swiper-parallax-x="-400">
                                                 <div class="simple-article size-4 light transparent">
-                                                    <p>In feugiat molestie tortor a malesuada. Etiam a venenatis ipsum. Proin pharetra elit at feugiat commodo vel placerat tincidunt sapien nec</p>
-                                                    <ul>
-                                                        <li>20.000h of high quality music</li>
-                                                        <li>Perfect insulation</li>
-                                                        <li>5 years guaranteed work</li>
-                                                    </ul>
+                                                    <p>Praesent nec finibus massa. Phasellus id auctor lacus, at iaculis lorem. Donec quis arcu elit. In vehicula purus sem, eu mattis est lacinia.</p>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <ul>
+                                                                <li>20.000h of high quality music</li>
+                                                                <li>perfect insulation</li>
+                                                                <li>5 years guaranteed work</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <ul>
+                                                                <li>consectetur adipiscing elit</li>
+                                                                <li>porta tortor sit amet</li>
+                                                                <li>feugiat augue placerat</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="col-xs-b30"></div>
                                             </div>
                                             <div data-swiper-parallax-x="-300">
                                                 <div class="buttons-wrapper">
+                                                    <div class="simple-article size-5 light transparent">BEST PRICE: $195.00</div>
                                                     <a class="button size-2 style-1" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
                                                             <span class="text">Learn More</span>
                                                         </span>
                                                     </a>
+                                                    <a class="button size-2 style-2" href="#">
+                                                        <span class="button-wrapper">
+                                                            <span class="icon"><img src="client/img/icon-2.png" alt=""></span>
+                                                            <span class="text">Add To Cart</span>
+                                                        </span>
+                                                    </a>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-b40 col-sm-b80"></div>
+                                            <div class="col-xs-b35 col-sm-b70"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-product-preview">
+                                    <div class="product-preview-shortcode light">
+                                        <div class="preview">
+                                            <div class="swiper-lazy-preloader"></div>
+                                            <div class="entry full-size swiper-lazy active" data-background="client/img/product-preview-14.png"></div>
+                                            <div class="entry full-size swiper-lazy" data-background="client/img/product-preview-13.png"></div>
+                                            <div class="entry full-size swiper-lazy" data-background="client/img/product-preview-12.png"></div>
+                                        </div>
+                                        <div class="sidebar valign-middle" data-swiper-parallax-x="-300">
+                                            <div class="valign-middle-content">
+                                                <div class="entry active"><img src="client/img/product-71.png" alt="" /></div>
+                                                <div class="entry"><img src="client/img/product-72.png" alt="" /></div>
+                                                <div class="entry"><img src="client/img/product-73.png" alt="" /></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -161,11 +169,11 @@
                             </div>
                        </div>
                    </div>
-                   <div class="swiper-pagination swiper-pagination-white"></div>
+                   <div class="swiper-pagination swiper-pagination-white hidden-lg"></div>
                 </div>
-            </div> --}}
+            </div>
 
-            {{-- <div class="row nopadding">
+            <div class="row nopadding">
                 <div class="col-sm-6">
                     <div class="banner-shortcode style-3 wide" style="background-image: url(client/img/background-9.jpg);">
                         <div class="valign-middle-cell">
@@ -202,9 +210,9 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
 
-            {{-- <div class="slider-wrapper">
+            <div class="slider-wrapper">
                 <div class="swiper-button-prev visible-lg"></div>
                 <div class="swiper-button-next visible-lg"></div>
                 <div class="swiper-container" data-breakpoints="1" data-xs-slides="1" data-sm-slides="2" data-md-slides="2" data-lt-slides="3"  data-slides-per-view="4">
@@ -560,7 +568,7 @@
                     </div>
                     <div class="swiper-pagination relative-pagination visible-xs visible-sm"></div>
                 </div>
-            </div> --}}
+            </div>
 
             {{-- <div class="empty-space col-xs-b35 col-md-b70"></div>
             <div class="empty-space col-xs-b35 col-md-b70"></div> --}}
@@ -685,17 +693,17 @@
             {{-- <div class="empty-space col-xs-b35 col-md-b70"></div>
             <div class="empty-space col-xs-b35 col-md-b70"></div> --}}
 
-            {{-- <div class="container">
+            <div class="container">
                 <div class="text-center">
                     <div class="simple-article size-3 grey uppercase col-xs-b5">new arrivals</div>
                     <div class="h2">something new for you</div>
                     <div class="title-underline center"><span></span></div>
                 </div>
-            </div> --}}
+            </div>
 
             {{-- <div class="empty-space col-xs-b35 col-md-b70"></div> --}}
 
-            {{-- <div class="tabs-block">
+            <div class="tabs-block">
                 <div class="container">
                     <div class="tabulation-menu-wrapper text-center">
                         <div class="tabulation-title simple-input">all</div>
@@ -1394,7 +1402,7 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
 
             {{-- <div class="empty-space col-xs-b35 col-md-b70"></div>
             <div class="empty-space col-xs-b35 col-md-b70"></div> --}}
@@ -1568,10 +1576,10 @@
                 </div>
             </div> --}}
 
-            <div class="empty-space col-xs-b35 col-md-b70"></div>
-            <div class="empty-space col-xs-b35 col-md-b70"></div>
+            {{-- <div class="empty-space col-xs-b35 col-md-b70"></div>
+            <div class="empty-space col-xs-b35 col-md-b70"></div> --}}
 
-            <div class="slider-wrapper">
+            {{-- <div class="slider-wrapper">
                 <div class="swiper-button-prev visible-lg"></div>
                 <div class="swiper-button-next visible-lg"></div>
                 <div class="swiper-container" data-parallax="1" data-auto-height="1">
@@ -1733,22 +1741,22 @@
                    </div>
                    <div class="swiper-pagination swiper-pagination-white hidden-lg"></div>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="empty-space col-xs-b35 col-md-b70"></div>
-            <div class="empty-space col-xs-b35 col-md-b70"></div>
+            {{-- <div class="empty-space col-xs-b35 col-md-b70"></div>
+            <div class="empty-space col-xs-b35 col-md-b70"></div> --}}
 
-            <div class="container">
+            {{-- <div class="container">
                 <div class="text-center">
                     <div class="simple-article size-3 grey uppercase col-xs-b5">accessories</div>
                     <div class="h2">choosing in one style</div>
                     <div class="title-underline center"><span></span></div>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="empty-space col-xs-b35 col-md-b70"></div>
+            {{-- <div class="empty-space col-xs-b35 col-md-b70"></div> --}}
 
-            <div class="container">
+            {{-- <div class="container">
                 <div class="small-items-line">
                     <div class="row nopadding">
                         <div class="col-sm-4 col-lg-2">
@@ -2184,12 +2192,12 @@
                         </span>
                     </a>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="empty-space col-xs-b35 col-md-b70"></div>
-            <div class="empty-space col-xs-b35 col-md-b70"></div>
+            {{-- <div class="empty-space col-xs-b35 col-md-b70"></div>
+            <div class="empty-space col-xs-b35 col-md-b70"></div> --}}
 
-            <div class="container-fluid">
+            {{-- <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4 col-xs-b15 col-md-b0">
                         <div class="banner-shortcode style-4 rounded-image text-center" style="background-image: url(client/img/background-5.jpg);">
@@ -2249,10 +2257,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="empty-space col-xs-b35 col-md-b70"></div>
-            <div class="empty-space col-xs-b35 col-md-b70"></div>
+            {{-- <div class="empty-space col-xs-b35 col-md-b70"></div>
+            <div class="empty-space col-xs-b35 col-md-b70"></div> --}}
 
             <div class="container">
                 <div class="row">
