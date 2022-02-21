@@ -111,7 +111,7 @@
                                                 <img src="{{asset('images/product/'.$product->product_main_image)}}" alt="">
                                                 <div class="preview-buttons valign-middle">
                                                     <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="{{ route('client.product_detail',['product_slug = $product->product_slug'])}}">
+                                                        <a class="button size-2 style-2" href="{{ route('client.product_detail',['product_id' => $product->product_id])}}">
                                                             <span class="button-wrapper">
                                                                 <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
                                                                 <span class="text">Learn More</span>
@@ -127,15 +127,10 @@
                                                 </div>
                                             </div>
                                             <div class="price">
-                                                <div class="color-selection">
-                                                    <div class="entry active" style="color: #a7f050;"></div>
-                                                    <div class="entry" style="color: #50e3f0;"></div>
-                                                    <div class="entry" style="color: #eee;"></div>
-                                                </div>
-                                                <div class="simple-article size-4"><span class="color">$630.00</span>&nbsp;&nbsp;&nbsp;<span class="line-through">$350.00</span></div>
+                                                <div class="simple-article size-4"><span class="color">${{$product->product_price}}</span>&nbsp;&nbsp;&nbsp;<span class={{$product->product_price_sale? "line-through" :""}}>{{$product->product_price_sale? $product->product_price_sale : ''}}</span></div>
                                             </div>
                                             <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
+                                                <div class="simple-article text size-2">{{$product->product_sort_descriptions}}</div>
                                                 <div class="icons">
                                                     <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                     <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -150,139 +145,13 @@
                     </div>
                     <div class="empty-space col-xs-b35 col-sm-b0"></div>
                     <div class="row">
-                        <div class="col-sm-3 hidden-xs">
-                            <a class="button size-1 style-5" href="#">
-                                <span class="button-wrapper">
-                                    <span class="icon"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
-                                    <span class="text">prev page</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-sm-6 text-center">
-                            <div class="pagination-wrapper">
-                                <a class="pagination active">1</a>
-                                <a class="pagination">2</a>
-                                <a class="pagination">3</a>
-                                <a class="pagination">4</a>
-                                <span class="pagination">...</span>
-                                <a class="pagination">23</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 hidden-xs text-right">
-                            <a class="button size-1 style-5" href="#">
-                                <span class="button-wrapper">
-                                    <span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
-                                    <span class="text">prev page</span>
-                                </span>
-                            </a>
-                        </div>
+                        {{ $products->links() }}
                     </div>
 
                     <div class="empty-space col-xs-b35 col-md-b70"></div>
                     <div class="empty-space col-md-b70"></div>
                 </div>
-                <div class="col-md-3 col-md-pull-9">
-                    <div class="h4 col-xs-b10">popular categories</div>
-                    <ul class="categories-menu transparent">
-                        @foreach($categories as $category)
-                            <li>
-                                <a href="#">{{ $category->category_name }}</a>
-                                <div class="toggle"></div>
-                                <ul>
-                                    @foreach($category->categoryChildren as $categoryChild)                          
-                                    <li>
-                                        <a href="#">{{ $categoryChild->category_name }}</a>
-                                        <div class="toggle"></div>
-                                        <ul>
-                                            @foreach($categoryChild->categoryChildren as $categoryGrandChild)
-                                            <li>
-                                                <a href="#">{{ $categoryGrandChild->category_name }}</a>
-                                            </li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                        @endforeach
-                    </ul>
-
-                    <div class="empty-space col-xs-b25 col-sm-b50"></div>
-
-                    <div class="h4 col-xs-b25">Price</div>
-                    <div id="prices-range"></div>
-                    <div class="simple-article size-1">PRICE: <b class="grey">$<span class="min-price">40</span> - $<span class="max-price">300</span></b></div>
-
-                    <div class="empty-space col-xs-b25 col-sm-b50"></div>
-
-                    <div class="h4 col-xs-b25">Brands</div>
-                    @foreach($brands as $brand)
-                    <label class="checkbox-entry">
-                        <input type="checkbox"><span>{{ $brand->brand_name}}</span>
-                        </label>
-                        <div class="empty-space col-xs-b10"></div>
-                    @endforeach
-
-
-                    {{-- <div class="empty-space col-xs-b25 col-sm-b50"></div>
-
-                    <div class="h4 col-xs-b25">Choose Color</div>
-                    <div class="color-selection size-1">
-                        <div class="entry active" style="color: #a7f050;"></div>
-                        <div class="entry" style="color: #50e3f0;"></div>
-                        <div class="entry" style="color: #eee;"></div>
-                        <div class="entry" style="color: #4d900c;"></div>
-                        <div class="entry" style="color: #edb82c;"></div>
-                        <div class="entry" style="color: #7d3f99;"></div>
-                        <div class="entry" style="color: #3481c7;"></div>
-                        <div class="entry" style="color: #bf584b;"></div>
-                    </div> --}}
-
-                    {{-- <div class="empty-space col-xs-b25 col-sm-b50"></div>
-
-                    <div class="h4 col-xs-b25">Operation System</div>
-                    <label class="checkbox-entry">
-                        <input type="checkbox"><span>Android</span>
-                    </label>
-                    <div class="empty-space col-xs-b10"></div>
-                    <label class="checkbox-entry">
-                        <input type="checkbox"><span>IOS</span>
-                    </label>
-                    <div class="empty-space col-xs-b10"></div>
-                    <label class="checkbox-entry">
-                        <input type="checkbox"><span>Windows Phone</span>
-                    </label>
-                    <div class="empty-space col-xs-b10"></div>
-                    <label class="checkbox-entry">
-                        <input type="checkbox"><span>Symbian</span>
-                    </label>
-                    <div class="empty-space col-xs-b10"></div>
-                    <label class="checkbox-entry">
-                        <input type="checkbox"><span>Blackberry OS</span>
-                    </label> --}}
-
-                    <div class="empty-space col-xs-b25 col-sm-b50"></div>
-
-                    <div class="h4 col-xs-b25">Popular Tags</div>
-                    <div class="tags light clearfix">
-                        <a class="tag">headphoness</a>
-                        <a class="tag">accessories</a>
-                        <a class="tag">new</a>
-                        <a class="tag">wireless</a>
-                        <a class="tag">cables</a>
-                        <a class="tag">devices</a>
-                        <a class="tag">gadgets</a>
-                        <a class="tag">brands</a>
-                        <a class="tag">replacements</a>
-                        <a class="tag">cases</a>
-                        <a class="tag">cables</a>
-                        <a class="tag">professional</a>
-                    </div>
-
-                    <div class="empty-space col-xs-b25 col-sm-b50"></div>
-
-
-                </div>
+                @include('client.components.product_sidebar')
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-3 col-xs-b25">

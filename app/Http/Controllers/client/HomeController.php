@@ -18,12 +18,15 @@ class HomeController extends Controller
     {
         $brands = Brand::all();
         $categories = Category::where('parent_id',0)->get();
-        $products = Product::all();
+        $products = Product::paginate(10);
         return view('client.products', compact('categories','brands','products'));
     }
-    public function product_detail()
+    public function product_detail($product_id)
     {
-        return view('client.product_detail');
+        $brands = Brand::all();
+        $categories = Category::where('parent_id',0)->get();
+        $product = Product::where('product_id',$product_id)->first();
+        return view('client.product_detail', compact('product','categories','brands'));
     }
     public function cart()
     {

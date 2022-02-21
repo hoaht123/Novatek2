@@ -62,7 +62,7 @@ Route::prefix('')->group(function(){
 
     Route::get('',[HomeController::class,'index'])->name('client.home'); 
     Route::get('/products',[HomeController::class,'products'])->name('client.products'); 
-    Route::get('/product/{product_slug}',[HomeController::class,'product_detail'])->name('client.product_detail');
+    Route::get('/product/{product_id}',[HomeController::class,'product_detail'])->name('client.product_detail');
     Route::get('/cart',[HomeController::class,'cart'])->name('client.cart');
     Route::get('/checkout',[HomeController::class,'checkout'])->name('client.checkout');
     Route::get('/contact',[HomeController::class,'contact'])->name('client.contact');
