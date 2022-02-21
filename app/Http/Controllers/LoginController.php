@@ -84,31 +84,30 @@ class LoginController extends Controller
             Session::put('user_name',$account_name->name);
             Session::put('user_id',$account_name->user_id);
             return redirect()->route('client.home');
+        }else{
+            $social = new Social([
+                'provider_id' => $users->id,
+                'provider' => strtoupper($provider)
+            ]);
+            $check = Users::where('email',$users->email)->first();
+                if(!$check){
+                    $check = Users::create([
+                        'name' => $users->name,
+                        'email' => $users->email,
+                        'password' => '',
+                        'phone' => '',
+                        'roles'=>1,
+                        'address'=>'',
+                    ]);
+                }
+            $social->login()->associate($check);
+            $social->save();
+            $account_name = Users::where('user_id',$social->user_id)->first();
+            Session::put('user_name',$account_name->name);
+            Session::put('user_id',$account_name->user_id);
+            return redirect()->route('client.home');
         }
-      
-        $social = new Social([
-            'provider_id' => $users->id,
-            'provider' => strtoupper($provider)
-        ]);
-        $check = Users::where('email',$users->email)->first();
-            if(!$check){
-                $check = Users::create([
-                    'name' => $users->name,
-                    'email' => $users->email,
-                    'password' => '',
-                    'phone' => '',
-                    'roles'=>1,
-                    'address'=>'',
-                ]);
-            }
-        $social->login()->associate($check);
-        $social->save();
-        $account_name = Users::where('user_id',$authUser->user_id)->first();
-        Session::put('user_name',$account_name->name);
-        Session::put('user_id',$account_name->user_id);
-        return redirect()->route('client.home');
-
-        }
+    }
 
 
 
