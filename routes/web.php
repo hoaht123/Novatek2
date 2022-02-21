@@ -56,6 +56,12 @@ Route::prefix('admin')->group(function(){
 });
 
 Route::prefix('')->group(function(){
+    //Login facebook
+    Route::get('/login-facebook',[App\Http\Controllers\LoginController::class,'login_facebook']);
+    Route::get('/login-facebook/callback',[App\Http\Controllers\LoginController::class,'login_facebook_callback']);
+    //logout
+    Route::get('log-out',[App\Http\Controllers\LoginController::class,'logout']);
+
     Route::get('',[HomeController::class,'index'])->name('client.home'); 
     Route::get('/products',[HomeController::class,'products'])->name('client.products'); 
     Route::get('/product/{product_slug}',[HomeController::class,'product_detail'])->name('client.product_detail');

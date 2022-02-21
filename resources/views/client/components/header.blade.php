@@ -8,7 +8,18 @@
                             <div class="entry"><b>email:</b> <a href="mailto:office@exzo.com">office@exzo.com</a></div>
                         </div>
                         <div class="col-md-7 col-md-text-right">
-                            <div class="entry"><a class="open-popup" data-rel="1"><b>login</b></a>&nbsp; or &nbsp;<a class="open-popup" data-rel="2"><b>register</b></a></div>
+                            <div class="entry">
+                                <?php
+                                    $user_name = Session::get('user_name');
+                                ?>
+                                @if($user_name)
+                                {{$user_name}}
+                                <a style="margin-left:10px " href="{{URL::to('log-out')}}">Logout</a>
+                                @else
+                                <a class="open-popup" data-rel="1"><b>login</b></a>&nbsp; or &nbsp;<a class="open-popup" data-rel="2"><b>register</b></a>
+                                @endif
+                            </div>
+                            
                             <div class="entry language">
                                 <div class="title"><b>en</b></div>
                                 <div class="language-toggle header-toggle-animation">

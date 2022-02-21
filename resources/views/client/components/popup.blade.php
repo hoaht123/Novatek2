@@ -31,24 +31,17 @@
                     <span>or</span>
                 </div>
                 <div class="row m5">
-                    <div class="col-sm-4 col-xs-b10 col-sm-b0">
-                        <a class="button facebook-button size-2 style-4 block" href="#">
+                    <div class="col-sm-6 col-xs-b10 col-sm-b0">
+                        <a class="button facebook-button size-2 style-4 block" href="{{URL::to('login-facebook')}}">
                             <span class="button-wrapper">
                                 <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
                                 <span class="text">facebook</span>
                             </span>
                         </a>
                     </div>
-                    <div class="col-sm-4 col-xs-b10 col-sm-b0">
-                        <a class="button twitter-button size-2 style-4 block" href="#">
-                            <span class="button-wrapper">
-                                <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
-                                <span class="text">twitter</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a class="button google-button size-2 style-4 block" href="#">
+                   
+                    <div class="col-sm-6">
+                        <a class="button google-button size-2 style-4 block" href="">
                             <span class="button-wrapper">
                                 <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
                                 <span class="text">google+</span>
@@ -95,7 +88,7 @@
                     <span>or</span>
                 </div>
                 <div class="row m5">
-                    <div class="col-sm-4 col-xs-b10 col-sm-b0">
+                    <div class="col-sm-6 col-xs-b10 col-sm-b0">
                         <a class="button facebook-button size-2 style-4 block" href="#">
                             <span class="button-wrapper">
                                 <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
@@ -103,15 +96,8 @@
                             </span>
                         </a>
                     </div>
-                    <div class="col-sm-4 col-xs-b10 col-sm-b0">
-                        <a class="button twitter-button size-2 style-4 block" href="#">
-                            <span class="button-wrapper">
-                                <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
-                                <span class="text">twitter</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
+                    
+                    <div class="col-sm-6">
                         <a class="button google-button size-2 style-4 block" href="#">
                             <span class="button-wrapper">
                                 <span class="icon"><img src="client/img/icon-4.png" alt="" /></span>
