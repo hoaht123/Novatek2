@@ -5,6 +5,7 @@ namespace App\Http\Controllers\client;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Brand;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,7 +18,8 @@ class HomeController extends Controller
     {
         $brands = Brand::all();
         $categories = Category::where('parent_id',0)->get();
-        return view('client.products', compact('categories','brands'));
+        $products = Product::all();
+        return view('client.products', compact('categories','brands','products'));
     }
     public function product_detail()
     {

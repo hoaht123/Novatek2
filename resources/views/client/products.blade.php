@@ -104,14 +104,14 @@
                                     <div class="col-sm-4">
                                         <div class="product-shortcode style-1">
                                             <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">{{}}</a></div>
+                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">{{$product -> product_name}}</a></div>
                                                 <div class="h6 animate-to-green"><a href="#">{{$product -> product_name}}</a></div>
                                             </div>
                                             <div class="preview">
-                                                <img src="{{asset}}" alt="">
+                                                <img src="{{asset('image/product/'.$product->product_main_image)}}" alt="">
                                                 <div class="preview-buttons valign-middle">
                                                     <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
+                                                        <a class="button size-2 style-2" href="{{ route('client.product_detail',['product_slug = $product->product_slug'])}}">
                                                             <span class="button-wrapper">
                                                                 <span class="icon"><img src="client/img/icon-1.png" alt=""></span>
                                                                 <span class="text">Learn More</span>
