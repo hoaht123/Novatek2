@@ -31,18 +31,12 @@ Route::prefix('admin')->group(function(){
     //Product
     Route::prefix('/create_product')->group(function(){
         Route::get('/',[App\Http\Controllers\ProductController::class,'create_product']);
-        Route::get('/case_form',[App\Http\Controllers\ProductController::class,'create_product_case']);
-        Route::get('/ram_form',[App\Http\Controllers\ProductController::class,'create_product_ram']);
-        Route::get('/storage_form',[App\Http\Controllers\ProductController::class,'create_product_storage']);
-        Route::get('/motherboard_form',[App\Http\Controllers\ProductController::class,'create_product_motherboard']);
-        Route::get('/graphic_card_form',[App\Http\Controllers\ProductController::class,'create_product_graphic_card']);
-        Route::get('/power_form',[App\Http\Controllers\ProductController::class,'create_product_power']);
-        Route::get('/keyboard_form',[App\Http\Controllers\ProductController::class,'create_product_keyboard']);
-        Route::get('/mouse_form',[App\Http\Controllers\ProductController::class,'create_product_mouse']);
-        Route::get('/headphone_form',[App\Http\Controllers\ProductController::class,'create_product_headphone']);
-        Route::get('/monitor_form',[App\Http\Controllers\ProductController::class,'create_product_monitor']);
+       
     });
-    
+
+    //User
+    Route::get('/view_user',[App\Http\Controllers\AdminController::class,'view_user']); 
+
     Route::post('/save_product',[App\Http\Controllers\ProductController::class,'save_product']);
     Route::get('/view_product',[App\Http\Controllers\ProductController::class,'view_product']);
     Route::get('/product_details/{product_id}',[App\Http\Controllers\ProductController::class,'product_details']);
@@ -59,6 +53,10 @@ Route::prefix('')->group(function(){
     //Login facebook
     Route::get('/login-facebook',[App\Http\Controllers\LoginController::class,'login_facebook']);
     Route::get('/login-facebook/callback',[App\Http\Controllers\LoginController::class,'login_facebook_callback']);
+
+    //Google
+    Route::get('/login-google',[App\Http\Controllers\LoginController::class,'login_google']);
+    Route::get('/login-google/callback',[App\Http\Controllers\LoginController::class,'login_google_callback']);
     //logout
     Route::get('log-out',[App\Http\Controllers\LoginController::class,'logout']);
 

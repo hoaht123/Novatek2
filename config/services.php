@@ -35,5 +35,12 @@ return [
         'redirect' => 'http://localhost:8080/Novatek2-2/public/login-facebook/callback' //callback trả về
     ],
 
+    'google' => [
+        'client_id' => '150058074678-jqkiu86ij6sbq4p09r16m4camg7rlmd5.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'http://localhost:8080/Novatek2-2/public/login-google/callback'
+    ],
+
+
 
 ];

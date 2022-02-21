@@ -18,6 +18,8 @@ class LoginController extends Controller
         return Socialite::driver('facebook')->redirect();
     }
 
+    
+
     public function login_facebook_callback(){
         //lấy thông tin facebook đăng nhập
         $provider = Socialite::driver('facebook')->user();
@@ -60,6 +62,56 @@ class LoginController extends Controller
         }
 
     }
+
+    public function login_google(){
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function login_google_callback(){
+        $users = Socialite::driver('google')->user(); 
+        return $this->findOrCreateUser($users,'google');
+
+    }
+
+    public function findOrCreateUser($users,$provider){
+        $authUser = Social::where('provider_id', $users->id)->first();
+        // echo '<pre>';
+        //     print_r($authUser);
+        //     echo '</pre>';
+        //     die();
+        if($authUser){
+            $account_name = Users::where('user_id',$authUser->user_id)->first();
+            Session::put('user_name',$account_name->name);
+            Session::put('user_id',$account_name->user_id);
+            return redirect()->route('client.home');
+        }
+      
+        $social = new Social([
+            'provider_id' => $users->id,
+            'provider' => strtoupper($provider)
+        ]);
+        $check = Users::where('email',$users->email)->first();
+            if(!$check){
+                $check = Users::create([
+                    'name' => $users->name,
+                    'email' => $users->email,
+                    'password' => '',
+                    'phone' => '',
+                    'roles'=>1,
+                    'address'=>'',
+                ]);
+            }
+        $social->login()->associate($check);
+        $social->save();
+        $account_name = Users::where('user_id',$authUser->user_id)->first();
+        Session::put('user_name',$account_name->name);
+        Session::put('user_id',$account_name->user_id);
+        return redirect()->route('client.home');
+
+        }
+
+
+
 
     public function logout(){
         Session::flush();
