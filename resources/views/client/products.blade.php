@@ -108,7 +108,7 @@
                                                 <div class="h6 animate-to-green"><a href="#">{{$product -> product_name}}</a></div>
                                             </div>
                                             <div class="preview">
-                                                <img src="{{asset('image/product/'.$product->product_main_image)}}" alt="">
+                                                <img src="{{asset('images/product/'.$product->product_main_image)}}" alt="">
                                                 <div class="preview-buttons valign-middle">
                                                     <div class="valign-middle-content">
                                                         <a class="button size-2 style-2" href="{{ route('client.product_detail',['product_slug = $product->product_slug'])}}">
